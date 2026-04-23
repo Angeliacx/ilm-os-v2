@@ -142,7 +142,7 @@ const MODELS_DATA = [
     next_actions: ["Contenu shooting batch", "Lien Sophie sur MYM", "Lives réguliers", "Calendrier éditorial semaine"],
     alert: null,
     revenue: { of_mtd: 2840, mym_mtd: 1350, of_target: 5000, mym_target: 3000, last_month_total: 3200 },
-    photo: null,
+    photo: "/models/vanessa.jpg",
     country: "🇫🇷", age: 28,
   },
   {
@@ -171,7 +171,7 @@ const MODELS_DATA = [
     next_actions: ["Réels IG (Ned)", "Setup MYM", "Premier batch contenu", "Infloww OF"],
     alert: "MYM non setup",
     revenue: { of_mtd: 120, mym_mtd: 0, of_target: 1500, mym_target: 1000, last_month_total: 0 },
-    photo: null,
+    photo: "/models/olesia.jpg",
     country: "🇺🇦", age: 25,
   },
   {
@@ -200,7 +200,7 @@ const MODELS_DATA = [
     next_actions: ["Sélection niches (Louis)", "Signer contrat", "Créer premiers comptes IG", "Contenu IA first batch"],
     alert: "Aucun compte IG — En réflexion",
     revenue: { of_mtd: 0, mym_mtd: 0, of_target: 800, mym_target: 0, last_month_total: 0 },
-    photo: null,
+    photo: "/models/juliette.jpg",
     country: "🇫🇷", age: 21,
   },
 ];
