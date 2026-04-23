@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export function middleware(request) {
-  // Allow API routes and static assets
+  // Allow API routes, static assets, and login page
   if (
     request.nextUrl.pathname.startsWith("/api/") ||
     request.nextUrl.pathname.startsWith("/_next/") ||
@@ -13,7 +13,17 @@ export function middleware(request) {
 
   // Check auth cookie
   const authCookie = request.cookies.get("ilm_auth");
-  if (authCookie?.value !== "authenticated") {
+  if (!authCookie?.value) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  // Validate cookie is valid base64 JSON with user info
+  try {
+    const decoded = JSON.parse(atob(authCookie.value));
+    if (!decoded.id || !decoded.role) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+  } catch {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 

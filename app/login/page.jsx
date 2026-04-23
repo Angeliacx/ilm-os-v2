@@ -7,6 +7,7 @@ const font = "'Cormorant Garamond', Georgia, serif";
 const fontSans = "'DM Sans', 'Segoe UI', sans-serif";
 
 export default function LoginPage() {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,7 +22,7 @@ export default function LoginPage() {
       const res = await fetch("/api/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await res.json();
@@ -29,7 +30,7 @@ export default function LoginPage() {
         router.push("/");
         router.refresh();
       } else {
-        setError("Mot de passe incorrect");
+        setError(data.error || "Identifiant ou mot de passe incorrect");
         setPassword("");
       }
     } catch {
@@ -61,7 +62,7 @@ export default function LoginPage() {
           border: "1px solid #1C1C3A",
           borderRadius: 20,
           padding: "48px 44px",
-          width: 400,
+          width: 420,
           maxWidth: "90vw",
           textAlign: "center",
         }}
@@ -116,13 +117,42 @@ export default function LoginPage() {
         />
 
         <form onSubmit={handleSubmit}>
+          {/* Username */}
+          <div style={{ marginBottom: 14 }}>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Prénom"
+              autoFocus
+              autoComplete="username"
+              style={{
+                width: "100%",
+                padding: "14px 18px",
+                background: "#111122",
+                border: "1px solid #1C1C3A",
+                borderRadius: 10,
+                color: "#F1EEFF",
+                fontSize: 14,
+                fontFamily: fontSans,
+                outline: "none",
+                transition: "border-color 0.2s",
+                textAlign: "center",
+                letterSpacing: "0.05em",
+              }}
+              onFocus={(e) => { e.target.style.borderColor = "rgba(201,168,76,0.4)"; }}
+              onBlur={(e) => { e.target.style.borderColor = "#1C1C3A"; }}
+            />
+          </div>
+
+          {/* Password */}
           <div style={{ marginBottom: 20 }}>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Mot de passe"
-              autoFocus
+              autoComplete="current-password"
               style={{
                 width: "100%",
                 padding: "14px 18px",
@@ -163,7 +193,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            disabled={loading || !password}
+            disabled={loading || !username || !password}
             style={{
               width: "100%",
               padding: "14px 0",
@@ -178,8 +208,8 @@ export default function LoginPage() {
               fontFamily: fontSans,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              cursor: loading || !password ? "not-allowed" : "pointer",
-              opacity: loading || !password ? 0.6 : 1,
+              cursor: loading || !username || !password ? "not-allowed" : "pointer",
+              opacity: loading || !username || !password ? 0.6 : 1,
               transition: "opacity 0.2s, transform 0.1s",
             }}
           >
@@ -194,7 +224,7 @@ export default function LoginPage() {
             color: "#6B7280",
           }}
         >
-          Document Confidentiel — ILM OS v2
+          Document Confidentiel — ILM OS v3
         </div>
       </div>
     </div>
