@@ -352,6 +352,160 @@ const MISSIONS_DATA = {
   },
 };
 
+// --- DATA: TEAM MEMBER TASKS (per-person daily dashboard) ---
+const TEAM_TASKS = {
+  jordan: {
+    role: "CEO",
+    todayTasks: [
+      { id: 1, text: "Finaliser ILM OS v3 — déploiement Vercel", done: true, priority: "high" },
+      { id: 2, text: "Rédiger brief contenu Olesia (WhatsApp)", done: true, priority: "high" },
+      { id: 3, text: "Ajouter photos modèles dans ILM OS", done: false, priority: "medium" },
+      { id: 4, text: "Passer repo GitHub en privé", done: false, priority: "high" },
+      { id: 5, text: "Appel CSAPA — RDV lundi addictologue", done: true, priority: "medium" },
+    ],
+    weekObjectives: [
+      "Déployer ILM OS v3 avec toutes les fonctionnalités",
+      "Obtenir premier photo set Olesia avant dimanche 26/04",
+      "Valider contrats Juliette + Louis",
+      "Structurer le planning éditorial de toutes les modèles",
+    ],
+    completedToday: [
+      "ILM OS v3 — auth multi-user + RBAC",
+      "Intégration Instagram (16 comptes, KPIs)",
+      "Onglet Personas + Missions + Agenda",
+      "Brief contenu Olesia envoyé sur WhatsApp",
+      "Suppression Elisa de toutes les données",
+    ],
+  },
+  ned: {
+    role: "Manager Olesia",
+    todayTasks: [
+      { id: 1, text: "Venir avec le téléphone Samsung demain (24/04)", done: false, priority: "high" },
+      { id: 2, text: "Faire la veille IG pour Olesia — repérer tendances", done: false, priority: "high" },
+      { id: 3, text: "Préparer les comptes IG warm-up Olesia", done: false, priority: "medium" },
+      { id: 4, text: "Setup MYM Olesia — création profil", done: false, priority: "high" },
+      { id: 5, text: "Planifier shooting réels IG (prévu 25/04)", done: false, priority: "medium" },
+    ],
+    weekObjectives: [
+      "Apporter le Samsung + configurer les comptes IG dessus",
+      "Lancer la veille IG quotidienne pour Olesia",
+      "Finaliser le setup MYM complet",
+      "Préparer le shooting réels IG du 25/04",
+    ],
+    completedToday: [],
+  },
+  olesia: {
+    role: "Modèle",
+    todayTasks: [
+      { id: 1, text: "Préparer photo set 1 (lingerie) — deadline 26/04", done: false, priority: "high" },
+      { id: 2, text: "Refaire le background profil OnlyFans", done: false, priority: "high" },
+      { id: 3, text: "Proposer plusieurs options photo de profil OF", done: false, priority: "high" },
+      { id: 4, text: "Regarder les 3 profils de référence envoyés", done: false, priority: "medium" },
+      { id: 5, text: "Prévoir tenues pour photo set 2 (deadline 03/05)", done: false, priority: "medium" },
+    ],
+    weekObjectives: [
+      "Photo set 1 (20-30 photos même tenue + vidéos courtes) avant le 26/04",
+      "Background + photo de profil OF refaits",
+      "Photo set 2 prévu pour le 03/05",
+      "Discuter LV2/LV3 en privé avec Jordan",
+    ],
+    completedToday: [],
+  },
+  sophie: {
+    role: "Manager Vanessa",
+    todayTasks: [
+      { id: 1, text: "Gérer publications MYM Vanessa", done: false, priority: "high" },
+      { id: 2, text: "Valider calendrier éditorial semaine", done: false, priority: "medium" },
+      { id: 3, text: "Préparer shooting batch contenu", done: false, priority: "medium" },
+      { id: 4, text: "Répondre aux DM IG prioritaires Vanessa", done: false, priority: "medium" },
+    ],
+    weekObjectives: [
+      "Atteindre 5000€ OF ce mois pour Vanessa",
+      "Planifier 3 lives OF cette semaine",
+      "Shooting batch lingerie + lifestyle",
+    ],
+    completedToday: [],
+  },
+  marvin: {
+    role: "Chatter Lead",
+    todayTasks: [
+      { id: 1, text: "Superviser les conversations OF/MYM", done: false, priority: "high" },
+      { id: 2, text: "Former Kocé sur les techniques de chat", done: false, priority: "medium" },
+      { id: 3, text: "Rétro-planning toutes modèles (prévu 28/04)", done: false, priority: "medium" },
+    ],
+    weekObjectives: [
+      "Augmenter le taux de conversion chatting",
+      "Préparer le rétro-planning du 28/04 avec Jordan",
+    ],
+    completedToday: [],
+  },
+  florian: {
+    role: "Manager Vanessa",
+    todayTasks: [
+      { id: 1, text: "Gestion comptes IG Vanessa — warm-up", done: false, priority: "medium" },
+      { id: 2, text: "Créer stories IG teaser pour Vanessa", done: false, priority: "medium" },
+    ],
+    weekObjectives: [
+      "5 comptes IG warm-up opérationnels",
+      "Augmenter engagement stories",
+    ],
+    completedToday: [],
+  },
+  koce: {
+    role: "Chatter",
+    todayTasks: [
+      { id: 1, text: "Répondre aux conversations OF assignées", done: false, priority: "high" },
+      { id: 2, text: "Suivre les guides personas pour chaque modèle", done: false, priority: "medium" },
+    ],
+    weekObjectives: [
+      "Maintenir un temps de réponse < 5min",
+      "Utiliser les personas pour chaque conversation",
+    ],
+    completedToday: [],
+  },
+  louis: {
+    role: "Manager Juliette",
+    todayTasks: [
+      { id: 1, text: "Sélection niches pour Juliette", done: false, priority: "high" },
+      { id: 2, text: "Préparer contrat pour signature (prévu 30/04)", done: false, priority: "high" },
+      { id: 3, text: "Recherche contenu IA — premier batch", done: false, priority: "medium" },
+    ],
+    weekObjectives: [
+      "Définir les 3 niches IG de Juliette",
+      "Contrat signé avant le 30/04",
+      "Premier batch contenu IA prêt",
+    ],
+    completedToday: [],
+  },
+  vanessa: {
+    role: "Modèle",
+    todayTasks: [
+      { id: 1, text: "Shooting batch lingerie + lifestyle", done: false, priority: "high" },
+      { id: 2, text: "Planifier 3 lives OF cette semaine", done: false, priority: "medium" },
+      { id: 3, text: "Créer 5 stories IG teaser", done: false, priority: "medium" },
+    ],
+    weekObjectives: [
+      "Atteindre 5000€ OF / 3000€ MYM ce mois",
+      "25 posts publiés ce mois",
+      "40K followers IG",
+    ],
+    completedToday: [],
+  },
+  juliette: {
+    role: "Modèle",
+    todayTasks: [
+      { id: 1, text: "Sélection niches avec Louis", done: false, priority: "medium" },
+      { id: 2, text: "Préparer documents pour signature contrat", done: false, priority: "high" },
+    ],
+    weekObjectives: [
+      "Définir positionnement et niches IG",
+      "Signer contrat avant le 30/04",
+      "5 comptes IG créés",
+    ],
+    completedToday: [],
+  },
+};
+
 // --- DATA: AGENDA ---
 const AGENDA_DATA = [
   { id: 1, date: "2026-04-22", time: "10:00", title: "Call équipe chatting", participants: ["Jordan", "Marvin", "Kocé"], type: "call", duration: 30 },
@@ -544,7 +698,7 @@ const PLATFORM_COLORS = { OF: "#00AFF0", MYM: T.gold, IG: "#E1306C" };
 // ═══════════════════════════════════════════════════════════════
 
 export default function ILMOS({ currentUser }) {
-  const [tab, setTab] = useState("dashboard");
+  const [tab, setTab] = useState("my-dashboard");
   const [selectedModel, setSelectedModel] = useState(null);
   const [calendarWeekOffset, setCalendarWeekOffset] = useState(0);
   const [calendarFilter, setCalendarFilter] = useState("all");
@@ -565,12 +719,14 @@ export default function ILMOS({ currentUser }) {
   const NAV = useMemo(() => {
     const nav = [];
     if (isModel) {
+      nav.push({ key: "my-dashboard", label: "Mon Dashboard", icon: "📋" });
       nav.push({ key: "my-profile", label: "Mon Profil", icon: "♛" });
       nav.push({ key: "missions", label: "Missions", icon: "🎯" });
       nav.push({ key: "calendar", label: "Calendrier", icon: "▦" });
       nav.push({ key: "agenda", label: "Agenda", icon: "📅" });
       nav.push({ key: "instagram", label: "Instagram", icon: "📷" });
     } else {
+      nav.push({ key: "my-dashboard", label: "Mon Dashboard", icon: "📋" });
       nav.push({ key: "dashboard", label: "Dashboard", icon: "◉" });
       nav.push({ key: "models", label: "Modèles", icon: "♛" });
       if (canSeeRevenue(currentUser)) nav.push({ key: "revenue", label: "Revenue", icon: "◆" });
@@ -588,7 +744,7 @@ export default function ILMOS({ currentUser }) {
     return nav;
   }, [currentUser, isModel]);
 
-  useEffect(() => { if (isModel && tab === "dashboard") setTab("my-profile"); }, [isModel, tab]);
+  useEffect(() => { if (isModel && tab === "dashboard") setTab("my-dashboard"); }, [isModel, tab]);
 
   // Scores
   const avgOnboarding = Math.round(MODELS_DATA.reduce((a, m) => a + m.onboarding, 0) / MODELS_DATA.length);
@@ -679,6 +835,120 @@ export default function ILMOS({ currentUser }) {
 
       {/* ═══ MAIN CONTENT ═══ */}
       <div style={{ flex: 1, padding: "32px 40px", overflowY: "auto", maxHeight: "100vh" }}>
+
+        {/* ════════════ MY DASHBOARD (per-user) ════════════ */}
+        {tab === "my-dashboard" && (() => {
+          const myTasks = TEAM_TASKS[currentUser.id];
+          if (!myTasks) return <div><SectionTitle>Mon Dashboard</SectionTitle><Card>Aucune tâche assignée pour le moment.</Card></div>;
+          const todayDate = new Date().toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+          const myAgenda = AGENDA_DATA.filter(e => e.participants.includes(currentUser.name));
+          const todayAgenda = myAgenda.filter(e => e.date === new Date().toISOString().slice(0, 10));
+          const upcomingAgenda = myAgenda.filter(e => e.date > new Date().toISOString().slice(0, 10)).slice(0, 5);
+          const doneCount = myTasks.todayTasks.filter(t => t.done).length;
+          const totalCount = myTasks.todayTasks.length;
+          const pct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
+          const priorityColors = { high: T.red, medium: T.orange, low: T.green };
+          return (
+            <div>
+              <SectionTitle sub={`${todayDate} — ${myTasks.role}`}>Bonjour {currentUser.name} 👋</SectionTitle>
+
+              {/* Progress bar */}
+              <Card style={{ marginBottom: 16 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                  <SubTitle style={{ margin: 0 }}>Progression du jour</SubTitle>
+                  <span style={{ color: pct === 100 ? T.green : T.gold, fontWeight: 700, fontSize: 18 }}>{pct}%</span>
+                </div>
+                <div style={{ height: 8, background: T.border, borderRadius: 4, overflow: "hidden" }}>
+                  <div style={{ height: "100%", width: `${pct}%`, background: pct === 100 ? T.green : `linear-gradient(90deg, ${T.gold}, ${T.purple})`, borderRadius: 4, transition: "width 0.5s" }} />
+                </div>
+                <div style={{ fontSize: 11, color: T.muted, marginTop: 6 }}>{doneCount} / {totalCount} tâches complétées</div>
+              </Card>
+
+              {/* Today's tasks */}
+              <SubTitle>📋 Mes tâches du jour</SubTitle>
+              <Card style={{ padding: 0, overflow: "hidden" }}>
+                {myTasks.todayTasks.map(task => (
+                  <div key={task.id} style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 16px", borderBottom: `1px solid ${T.border}`, opacity: task.done ? 0.6 : 1 }}>
+                    <div style={{ width: 20, height: 20, borderRadius: 4, border: `2px solid ${task.done ? T.green : T.muted}`, background: task.done ? T.green : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: T.bg, flexShrink: 0 }}>{task.done ? "✓" : ""}</div>
+                    <div style={{ flex: 1 }}>
+                      <span style={{ color: task.done ? T.muted : T.white, textDecoration: task.done ? "line-through" : "none", fontSize: 13 }}>{task.text}</span>
+                    </div>
+                    <Badge color={priorityColors[task.priority]} bg={`${priorityColors[task.priority]}20`}>{task.priority === "high" ? "Urgent" : task.priority === "medium" ? "Normal" : "Bas"}</Badge>
+                  </div>
+                ))}
+              </Card>
+
+              {/* Week objectives */}
+              <SubTitle style={{ marginTop: 20 }}>🎯 Objectifs de la semaine</SubTitle>
+              <Card>
+                {myTasks.weekObjectives.map((obj, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: i < myTasks.weekObjectives.length - 1 ? 10 : 0 }}>
+                    <span style={{ color: T.gold, fontSize: 14, marginTop: 1 }}>◆</span>
+                    <span style={{ color: T.mutedLight, fontSize: 13 }}>{obj}</span>
+                  </div>
+                ))}
+              </Card>
+
+              {/* Completed today */}
+              {myTasks.completedToday.length > 0 && (
+                <>
+                  <SubTitle style={{ marginTop: 20 }}>✅ Réalisé aujourd'hui</SubTitle>
+                  <Card>
+                    {myTasks.completedToday.map((item, i) => (
+                      <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: i < myTasks.completedToday.length - 1 ? 8 : 0 }}>
+                        <span style={{ color: T.green, fontSize: 12, marginTop: 2 }}>✓</span>
+                        <span style={{ color: T.muted, fontSize: 12 }}>{item}</span>
+                      </div>
+                    ))}
+                  </Card>
+                </>
+              )}
+
+              {/* Today's agenda */}
+              {todayAgenda.length > 0 && (
+                <>
+                  <SubTitle style={{ marginTop: 20 }}>📅 Agenda du jour</SubTitle>
+                  <Card style={{ padding: 0, overflow: "hidden" }}>
+                    {todayAgenda.map(e => (
+                      <div key={e.id} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 16px", borderBottom: `1px solid ${T.border}` }}>
+                        <div style={{ width: 4, height: 32, borderRadius: 2, background: AGENDA_TYPE_COLORS[e.type] || T.gold, flexShrink: 0 }} />
+                        <span style={{ color: T.gold, fontWeight: 600, fontSize: 13, width: 50 }}>{e.time}</span>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ color: T.white, fontSize: 13 }}>{e.title}</div>
+                          <div style={{ color: T.muted, fontSize: 10 }}>{e.participants.join(", ")} — {e.duration}min</div>
+                        </div>
+                      </div>
+                    ))}
+                  </Card>
+                </>
+              )}
+
+              {/* Upcoming */}
+              {upcomingAgenda.length > 0 && (
+                <>
+                  <SubTitle style={{ marginTop: 20 }}>📆 Prochains événements</SubTitle>
+                  <Card style={{ padding: 0, overflow: "hidden" }}>
+                    {upcomingAgenda.map(e => {
+                      const d = new Date(e.date + "T00:00:00");
+                      const dayStr = d.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" });
+                      return (
+                        <div key={e.id} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 16px", borderBottom: `1px solid ${T.border}` }}>
+                          <div style={{ width: 4, height: 32, borderRadius: 2, background: AGENDA_TYPE_COLORS[e.type] || T.gold, flexShrink: 0 }} />
+                          <span style={{ color: T.muted, fontSize: 11, width: 80 }}>{dayStr}</span>
+                          <span style={{ color: T.gold, fontWeight: 600, fontSize: 13, width: 50 }}>{e.time}</span>
+                          <div style={{ flex: 1 }}>
+                            <div style={{ color: T.white, fontSize: 13 }}>{e.title}</div>
+                            <div style={{ color: T.muted, fontSize: 10 }}>{e.participants.join(", ")}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </Card>
+                </>
+              )}
+            </div>
+          );
+        })()}
 
         {/* ════════════ DASHBOARD ════════════ */}
         {tab === "dashboard" && !isModel && (
