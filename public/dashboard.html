@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#06060E">
+    <title>ILM OS — I Love Models</title>
+    <meta name="description" content="Agency Operations System — I Love Models">
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;♛&lt;/text&gt;&lt;/svg&gt;">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar" aria-label="Navigation ILM">
+        <a class="brand" href="#dashboard" aria-label="ILM Agency OS">
+          <span class="brand-mark">ILM</span>
+          <span>
+            <strong>I Love Models</strong>
+            <small>Agency OS</small>
+          </span>
+        </a>
+        <nav class="nav">
+          <a href="#dashboard" data-route="dashboard" class="active">Dashboard</a>
+          <a href="#models" data-route="models">Modèles</a>
+          <a href="#team" data-route="team">Équipe</a>
+          <a href="#deadlines" data-route="deadlines">Deadlines</a>
+          <a href="#process" data-route="process">Process</a>
+          <a href="#recipe" data-route="recipe">Recette</a>
+          <a href="#notion" data-route="notion">Notion</a>
+        </nav>
+        <section class="sidebar-panel">
+          <span class="eyebrow">Mémoire projet</span>
+          <strong>v3 · 10/04/2026</strong>
+          <p>Version structurée pour piloter l’agence, préparer Vercel et brancher Notion.</p>
+          <small>Document Confidentiel — ILM OS</small>
+        </section>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">Direction opérationnelle</span>
+            <h1>ILM Agency OS</h1>
+          </div>
+          <div class="topbar-actions">
+            <span id="roleBadge" class="pill">Session</span>
+          </div>
+          <label class="search">
+            <span>⌕</span>
+            <input id="globalSearch" type="search" placeholder="Rechercher modèle, mission, manager...">
+          </label>
+        </header>
+
+        <section id="dashboard" class="view active" aria-labelledby="dashboard-title">
+          <div class="hero brand-cover" aria-label="I Love Models">
+            <h2 id="dashboard-title" class="sr-only">ILM Agency OS</h2>
+          </div>
+
+          <div class="stats-grid" id="statsGrid"></div>
+
+          <div class="ops-support-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Connexions</span>
+                  <h3>API & donnees a brancher</h3>
+                </div>
+                <span id="connectionCount" class="pill warning"></span>
+              </div>
+              <div id="connectionList" class="connection-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">KPI driven</span>
+                  <h3>Indicateurs par modele</h3>
+                </div>
+                <span class="pill">Base prete</span>
+              </div>
+              <div id="kpiModelGrid" class="kpi-model-grid"></div>
+            </section>
+          </div>
+
+          <section class="panel priorities-panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Vanessa / Sophie Banks</span>
+                <h3>Priorites</h3>
+              </div>
+              <span id="vanessaTodoCount" class="pill danger"></span>
+            </div>
+            <div id="vanessaTaskList" class="todo-grid"></div>
+          </section>
+
+          <section class="panel daily-ops-panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Point operationnel</span>
+                <h3>Aujourd'hui / demain</h3>
+              </div>
+              <span id="dailyOpsCount" class="pill warning"></span>
+            </div>
+            <div class="daily-ops-grid">
+              <div>
+                <h4>Fait aujourd'hui</h4>
+                <div id="todayDoneList" class="ops-list"></div>
+              </div>
+              <div>
+                <h4>A faire demain / reste a faire</h4>
+                <div id="tomorrowTaskList" class="todo-grid compact"></div>
+              </div>
+            </div>
+          </section>
+
+          <div class="ops-support-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Deeplinks</span>
+                  <h3>Domaines anti-flag</h3>
+                </div>
+                <span class="pill warning">A choisir</span>
+              </div>
+              <div id="domainList" class="domain-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Equipe OS</span>
+                  <h3>Objectifs par personne</h3>
+                </div>
+                <span class="pill">Acces prets</span>
+              </div>
+              <div id="teamWorkspaceGrid" class="workspace-grid"></div>
+            </section>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h3>Priorités critiques</h3>
+                <span id="criticalCount" class="pill danger"></span>
+              </div>
+              <div id="criticalTasks" class="task-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h3>Pipeline modèles</h3>
+                <span class="pill">Suivi</span>
+              </div>
+              <div id="pipelineList" class="pipeline"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="models" class="view" aria-labelledby="models-title">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Suivi modèles</span>
+              <h2 id="models-title">Portefeuille ILM</h2>
+            </div>
+            <div class="segmented" role="tablist" aria-label="Filtre modèles">
+              <button class="active" data-filter="all">Tous</button>
+              <button data-filter="Active">Actives</button>
+              <button data-filter="Onboarding">Onboarding</button>
+            </div>
+          </div>
+          <div id="modelGrid" class="model-grid"></div>
+        </section>
+
+        <section id="team" class="view" aria-labelledby="team-title">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Rôles & ressources</span>
+              <h2 id="team-title">Équipe</h2>
+            </div>
+          </div>
+          <div id="teamGrid" class="team-grid"></div>
+          <section class="panel wide">
+            <div class="panel-head">
+              <h3>Téléphones</h3>
+              <span class="pill">Attribution</span>
+            </div>
+            <div id="phoneTable" class="table"></div>
+          </section>
+        </section>
+
+        <section id="deadlines" class="view" aria-labelledby="deadlines-title">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Avril 2026</span>
+              <h2 id="deadlines-title">Deadlines</h2>
+            </div>
+            <label class="toggle">
+              <input id="showDone" type="checkbox">
+              <span>Afficher tout</span>
+            </label>
+          </div>
+          <div id="deadlineList" class="timeline"></div>
+        </section>
+
+        <section id="process" class="view" aria-labelledby="process-title">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Guides rapides</span>
+              <h2 id="process-title">Process</h2>
+            </div>
+          </div>
+          <div id="processGrid" class="process-grid"></div>
+        </section>
+
+        <section id="recipe" class="view" aria-labelledby="recipe-title">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Recette & branchements</span>
+              <h2 id="recipe-title">Checklist de mise en production</h2>
+            </div>
+            <button id="exportSnapshot" class="button" type="button">Exporter l'etat</button>
+          </div>
+          <div class="ops-support-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Vercel</span>
+                  <h3>Configuration detectee</h3>
+                </div>
+                <span id="runtimeStatus" class="pill warning">Verification</span>
+              </div>
+              <div id="runtimeGrid" class="runtime-grid"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Equipe</span>
+                  <h3>Acces a distribuer</h3>
+                </div>
+                <span class="pill">Roles</span>
+              </div>
+              <div id="accessMatrix" class="access-matrix"></div>
+            </section>
+          </div>
+          <div id="recipeGrid" class="recipe-grid"></div>
+        </section>
+
+        <section id="notion" class="view" aria-labelledby="notion-title">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Notion mapping</span>
+              <h2 id="notion-title">Pages & bases connectables</h2>
+            </div>
+          </div>
+          <section class="panel">
+            <div class="panel-head">
+              <h3>Page racine</h3>
+              <span class="pill">3377b2136958815ea26cc183973a37e0</span>
+            </div>
+            <p class="muted">Quand le connecteur Notion sera activé, cette section pourra devenir une synchronisation live. Pour l’instant, les IDs sont conservés proprement dans le code.</p>
+          </section>
+          <div id="notionGrid" class="notion-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

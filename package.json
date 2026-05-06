@@ -1,0 +1,26 @@
+{
+  "name": "ilm-agency-os",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ILM - I Love Models agency operating dashboard for Vercel.",
+  "scripts": {
+    "dev": "next dev",
+    "start": "node dev-server.js",
+    "lint": "node --check app.js && node --check data.js && node --check dev-server.js",
+    "build": "next build",
+    "vercel-build": "next build"
+  },
+  "keywords": [
+    "ilm",
+    "agency",
+    "dashboard",
+    "vercel"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "next": "^15.5.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {}
+}

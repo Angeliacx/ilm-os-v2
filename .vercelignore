@@ -1,0 +1,14 @@
+.git/
+.next/
+node_modules/
+
+/*.png
+/*.jpg
+/*.jpeg
+*.cjs
+*.mjs
+*.py
+
+unly-media-helper/
+coverage/
+dist/
