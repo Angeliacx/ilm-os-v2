@@ -69,7 +69,7 @@ const ILM_DATA = {
       status: "Manual first",
       priority: "High",
       purpose: "Suivre revenus, abonnes, PPV, contenu importe et plateformes de vente.",
-      next: "Demarrer avec saisie/export manuel, puis verifier les outils tiers fiables."
+      next: "Ranger Sophie sur MYM par collections, transferer ensuite vers Unly, et verifier si Olesia peut passer vite sur OF ou MYM."
     },
     {
       name: "Substy / Unly",
@@ -77,7 +77,7 @@ const ILM_DATA = {
       status: "In progress",
       priority: "High",
       purpose: "Tester comprehension contenu, descriptions, PPV logic et catalogue.",
-      next: "Noter les scripts, les contenus importes et les resultats des tests."
+      next: "Acheter 2 programmes Unly, un par compte, puis controler que les contenus Sophie/Juliette restent bien separes."
     },
     {
       name: "X / Influence",
@@ -104,7 +104,8 @@ const ILM_DATA = {
       metrics: [
         ["Revenue MTD", "A renseigner"],
         ["Deeplink live", "madame-vanessa"],
-        ["MYM import", "A faire"],
+        ["MYM collections", "A ranger"],
+        ["Unly transfert", "Apres MYM"],
         ["Telegram videos", "0 / 20"],
         ["TikTok daily repost", "A lancer"],
         ["Buzz reels", "A produire"]
@@ -132,7 +133,7 @@ const ILM_DATA = {
         ["Warm-up", "A suivre"],
         ["Reels", "A produire"],
         ["Vercel Olesia", "Domaine a choisir"],
-        ["OF/MYM", "Pas encore"]
+        ["OF/MYM", "Eligibilite rapide a verifier"]
       ]
     }
   ],
@@ -555,13 +556,35 @@ const ILM_DATA = {
       {
         id: "ops-sophie-mym-to-unly",
         group: "Daily Ops",
-        title: "Importer Sophie MYM vers Unly",
+        title: "Sophie MYM collections puis Unly",
         priority: "High",
         status: "To do",
         owner: "Jordan",
         deadline: "Demain",
-        summary: "Importer tous les contenus de Sophie sur MYM vers Unly.",
-        actions: ["Verifier les medias.", "Ranger les contenus.", "Tester l'affichage avec le nouveau code."]
+        summary: "Mettre tout le contenu Sophie sur MYM en collections propres, collection par collection, puis transferer vers Unly.",
+        actions: ["Verifier tous les medias Sophie.", "Creer/ranger les collections MYM une par une.", "Importer ensuite sur Unly en gardant le meme rangement.", "Tester l'affichage avec le nouveau code."]
+      },
+      {
+        id: "ops-unly-programs-two-accounts",
+        group: "Daily Ops",
+        title: "Acheter 2 programmes Unly",
+        priority: "High",
+        status: "To do",
+        owner: "Jordan",
+        deadline: "Avant alimentation finale",
+        summary: "Acheter un programme Unly par compte afin de separer proprement Sophie et Juliette.",
+        actions: ["Confirmer les 2 comptes concernes.", "Acheter 1 programme par compte.", "Verifier que chaque compte garde ses contenus, scripts et liens separes."]
+      },
+      {
+        id: "ops-olesia-of-mym-fast-check",
+        group: "Daily Ops",
+        title: "Verifier OF/MYM Olesia rapidement",
+        priority: "High",
+        status: "To do",
+        owner: "Jordan + Ned",
+        deadline: "Cette semaine",
+        summary: "Voir si Olesia peut etre mise rapidement sur OnlyFans ou MYM pour ouvrir une premiere base de monetisation.",
+        actions: ["Verifier les pieces et conditions de validation.", "Choisir plateforme prioritaire: OF, MYM ou les deux.", "Lister ce qui manque: contenus, bio, bannieres, identite, paiement.", "Decider si on lance tout de suite ou apres niche/reels."]
       },
       {
         id: "ops-juliette-banner-pp",
@@ -732,7 +755,7 @@ const ILM_DATA = {
       role: "Gestionnaire Vanessa",
       access: "ILM_PASSWORD_SOPHIE",
       objective: "Piloter planning, budget, contenus Vanessa et nouveaux reels.",
-      tasks: ["RDV mardi apres-midi", "Planning/budget dans agenda", "Nouveaux reels Vanessa"]
+      tasks: ["RDV mardi apres-midi", "MYM en collections", "Nouveaux reels Vanessa"]
     },
     {
       name: "Louis",
@@ -760,14 +783,14 @@ const ILM_DATA = {
       role: "Social media manager",
       access: "ILM_PASSWORD_NED",
       objective: "Gerer Olesia, verifier la capacite telephone et preparer les comptes IG.",
-      tasks: ["Verifier capacite telephone", "Nouveaux comptes Olesia", "Reels Olesia"]
+      tasks: ["Verifier capacite telephone", "OF/MYM Olesia", "Reels Olesia"]
     },
     {
       name: "Marvin",
       role: "Chatting & Media",
       access: "ILM_PASSWORD_MARVIN",
       objective: "Structurer PPV, contenu, Infloww et suivi operations modeles.",
-      tasks: ["PPV hors OF", "Comptabilite a confirmer", "Support contenu Vanessa/Juliette"]
+      tasks: ["PPV hors OF", "Support MYM collections", "Support contenu Vanessa/Juliette"]
     },
     {
       name: "Team",

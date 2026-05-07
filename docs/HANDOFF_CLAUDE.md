@@ -73,6 +73,7 @@ Actuellement en production :
 - liens actifs Vanessa : `Mon jardin secret 🌹` vers MYM Sophie Banks, `Telegram des betises 🍬` vers le canal Telegram
 - routes de tracking clic : `/go/mym` et `/go/telegram`
 - `olesia.com` est indisponible au 07/05/2026 ; options disponibles verifiees : `olesiaofficial.com`, `olesiaxoxo.com`, `liabunnyy.com`
+- priorite ajoutee : ranger tout le contenu Sophie sur MYM par collections, transferer ensuite vers Unly, acheter 2 programmes Unly, puis verifier si Olesia peut passer rapidement sur OF ou MYM
 
 ## Recette
 
