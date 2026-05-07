@@ -21,7 +21,9 @@ export async function GET() {
       tiktok: enabled(process.env.TIKTOK_ACCESS_TOKEN),
       telegram: enabled(process.env.TELEGRAM_BOT_TOKEN),
       x: enabled(process.env.X_BEARER_TOKEN),
-      analytics: enabled(process.env.VERCEL_ANALYTICS_ID)
+      analytics: enabled(process.env.VERCEL_ANALYTICS_ID),
+      vercelApi: enabled(process.env.VERCEL_API_TOKEN),
+      madameVanessaProject: enabled(process.env.VERCEL_PROJECT_ID_MADAME_VANESSA)
     }
   });
 }

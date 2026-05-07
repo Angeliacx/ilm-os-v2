@@ -220,6 +220,10 @@ h4 {
   display: block;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -426,6 +430,113 @@ h4 {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
+}
+
+.mini-link {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid rgba(216, 197, 168, 0.28);
+  border-radius: 999px;
+  background: rgba(216, 197, 168, 0.08);
+  color: var(--yellow);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.ceo-notes-panel {
+  margin-bottom: 18px;
+}
+
+.quick-note-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 140px auto;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.quick-note-form input,
+.quick-note-form select {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-strong);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 800;
+  padding: 0 12px;
+}
+
+.quick-note-form input:focus,
+.quick-note-form select:focus {
+  outline: 0;
+  border-color: rgba(216, 197, 168, 0.52);
+}
+
+.ceo-notes-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.ceo-note {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-strong);
+}
+
+.ceo-note.done {
+  opacity: 0.58;
+}
+
+.ceo-note > button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--green);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.ceo-note strong,
+.ceo-note small {
+  display: block;
+}
+
+.ceo-note small {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.ceo-note-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ceo-note-actions button {
+  min-height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 0 10px;
 }
 
 .workspace-grid {
@@ -1389,7 +1500,9 @@ code {
   .todo-card,
   .domain-row,
   .runtime-row,
-  .access-row {
+  .access-row,
+  .quick-note-form,
+  .ceo-note {
     grid-template-columns: 1fr;
   }
 
@@ -1401,6 +1514,10 @@ code {
 
   .access-row > div:last-child {
     justify-items: start;
+  }
+
+  .ceo-note-actions {
+    flex-wrap: wrap;
   }
 
   .segmented {

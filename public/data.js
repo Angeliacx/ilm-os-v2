@@ -90,10 +90,10 @@ const ILM_DATA = {
     {
       name: "Vercel / Domaines",
       owner: "Jordan",
-      status: "Live",
+      status: "In progress",
       priority: "High",
       purpose: "Heberger ILM OS, proteger l'acces et preparer les deeplinks propres.",
-      next: "Choisir le domaine Vanessa et ajouter les mots de passe equipe."
+      next: "Vercel Madame Vanessa live. Choisir et acheter le .com, puis le brancher au projet."
     }
   ],
   kpiBlueprints: [
@@ -103,6 +103,7 @@ const ILM_DATA = {
       focus: "Relance, revenus MYM/OF, Telegram, TikTok et comptes US.",
       metrics: [
         ["Revenue MTD", "A renseigner"],
+        ["Deeplink live", "madame-vanessa"],
         ["MYM import", "A faire"],
         ["Telegram videos", "0 / 20"],
         ["TikTok daily repost", "A lancer"],
@@ -535,34 +536,52 @@ const ILM_DATA = {
   },
   deeplinkDomains: [
     {
+      name: "madame-vanessa.vercel.app",
+      status: "Live",
+      priority: "High",
+      note: "Vercel Madame Vanessa cree et publie. Sert de preview avant achat/connexion du .com.",
+      purchaseUrl: "https://madame-vanessa.vercel.app"
+    },
+    {
       name: "mmevanessa.com",
       status: "Unavailable",
       priority: "High",
-      note: "Indisponible a l'achat au 06/05/2026. Ne pas bloquer le travail dessus ce soir."
+      note: "Indisponible a l'achat au 07/05/2026. A garder en surveillance, mais ne pas bloquer dessus."
     },
     {
-      name: "mmevanessa.co",
+      name: "madamevanessaoff.com",
       status: "Available",
       priority: "High",
-      note: "Option simple et proche du nom voulu. Disponible cote Vercel a 17.99 dollars/an."
+      note: "Meilleure option .com disponible: proche du compte IG/OF, clair, $11.25/an cote Vercel.",
+      purchaseUrl: "https://vercel.com/domains/search?q=madamevanessaoff.com"
     },
     {
-      name: "sophiebanks.co",
+      name: "mmevanessaoff.com",
       status: "Available",
       priority: "High",
-      note: "Option propre pour Sophie Banks. Disponible cote Vercel a 17.99 dollars/an."
+      note: "Option courte et propre, disponible a $11.25/an cote Vercel.",
+      purchaseUrl: "https://vercel.com/domains/search?q=mmevanessaoff.com"
     },
     {
-      name: "mmevanessa.fr",
+      name: "mmevanessaofficial.com",
       status: "Available",
       priority: "Medium",
-      note: "Semble disponible, mais prix non supporte par Vercel. A acheter hors Vercel si besoin."
+      note: "Plus long, mais rassurant pour une page officielle. Disponible a $11.25/an cote Vercel.",
+      purchaseUrl: "https://vercel.com/domains/search?q=mmevanessaofficial.com"
     },
     {
-      name: "sophiebanks.fr",
+      name: "madamevanessax.com",
       status: "Available",
       priority: "Medium",
-      note: "Semble disponible, mais prix non supporte par Vercel. Bon plan B francophone."
+      note: "Plus lifestyle, moins officiel. Disponible a $11.25/an cote Vercel.",
+      purchaseUrl: "https://vercel.com/domains/search?q=madamevanessax.com"
+    },
+    {
+      name: "sophiebanksofficial.com",
+      status: "Available",
+      priority: "Medium",
+      note: "Option persona Sophie Banks, disponible a $11.25/an cote Vercel.",
+      purchaseUrl: "https://vercel.com/domains/search?q=sophiebanksofficial.com"
     }
   ],
   teamWorkspaces: [
@@ -648,6 +667,19 @@ const ILM_DATA = {
     }
   ],
   recipes: [
+    {
+      title: "Vercel Madame Vanessa",
+      goal: "Avoir une page deeplink propre avant le domaine .com.",
+      status: "Live preview",
+      owner: "Jordan",
+      steps: [
+        "Preview live: https://madame-vanessa.vercel.app",
+        "Choisir le .com final.",
+        "Acheter le domaine dans Vercel.",
+        "Ajouter le domaine au projet madame-vanessa.",
+        "Activer Web Analytics pour suivre page views et clics."
+      ]
+    },
     {
       title: "Notion ILM",
       goal: "Donner au dashboard une source operationnelle centrale.",

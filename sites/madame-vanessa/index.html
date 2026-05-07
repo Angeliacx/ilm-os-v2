@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08070c">
+    <title>Madame Vanessa</title>
+    <meta name="description" content="Madame Vanessa - liens officiels">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="profile" aria-label="Madame Vanessa">
+        <div class="portrait">
+          <img src="assets/vanessa.jpeg" alt="Madame Vanessa">
+        </div>
+        <div class="content">
+          <p class="eyebrow">Official</p>
+          <h1>Madame Vanessa</h1>
+          <p class="intro">Retrouve mes contenus, mes updates et ma communaute depuis cette page officielle.</p>
+          <div class="links">
+            <a href="https://t.me/+KfrNnp3lETU4OWY8" data-link="Telegram">Telegram</a>
+            <a href="https://mym.fans/Sophiebanks" data-link="MYM">MYM</a>
+            <a href="https://onlyfans.com/madamevanessaoff" data-link="OnlyFans">Private feed</a>
+            <a href="https://www.instagram.com/madamevanessaoff/" data-link="Instagram">Instagram</a>
+          </div>
+          <small>Madame Vanessa - page officielle</small>
+        </div>
+      </section>
+    </main>
+    <script>
+      document.querySelectorAll("[data-link]").forEach((link) => {
+        link.addEventListener("click", () => {
+          window.va("event", {
+            name: "Vanessa Link Click",
+            data: {
+              label: link.dataset.link,
+              href: link.href,
+              source: new URLSearchParams(location.search).get("utm_source") || "direct"
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -23,6 +23,18 @@ Le site public est :
 
 `https://ilm-flax.vercel.app`
 
+Projet Vercel ILM :
+
+`prj_x9I2dUkfBuO2hRzJje5N5sF69Q1h`
+
+Mini-site Madame Vanessa :
+
+`https://madame-vanessa.vercel.app`
+
+Projet Vercel Madame Vanessa :
+
+`prj_EQbBVfDNxDGpmQMrEpA5x3CPpUYY`
+
 ## Fichiers principaux
 
 - `index.html` : structure statique du dashboard
@@ -57,6 +69,7 @@ Actuellement en production :
 - `ILM_PASSWORD` est configure
 - les mots de passe equipe ne sont pas encore configures
 - les connecteurs Notion / Meta / TikTok / Telegram / X ne sont pas encore configures
+- le mini-site Madame Vanessa est deploye, mais le domaine `.com` n'est pas encore achete/branche
 
 ## Recette
 

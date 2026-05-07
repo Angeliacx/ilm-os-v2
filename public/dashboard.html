@@ -60,6 +60,26 @@
 
           <div class="stats-grid" id="statsGrid"></div>
 
+          <section id="ceoNotesPanel" class="panel ceo-notes-panel hidden">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">CEO only</span>
+                <h3>Notes rapides & to-do perso</h3>
+              </div>
+              <span id="ceoNotesCount" class="pill">0 note</span>
+            </div>
+            <form id="ceoNoteForm" class="quick-note-form">
+              <input id="ceoNoteInput" type="text" placeholder="Note rapide, idee, action a ne pas oublier...">
+              <select id="ceoNotePriority" aria-label="Priorite note">
+                <option value="High">High</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Low">Low</option>
+              </select>
+              <button class="button primary" type="submit">Ajouter</button>
+            </form>
+            <div id="ceoNotesList" class="ceo-notes-list"></div>
+          </section>
+
           <div class="ops-support-grid">
             <section class="panel">
               <div class="panel-head">
@@ -263,6 +283,10 @@
       </main>
     </div>
 
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>

@@ -7,6 +7,7 @@ const STORAGE_KEY = "ilm-os-state-v1";
 const storedState = loadState();
 const taskStatuses = storedState.taskStatuses || {};
 const kpiValues = storedState.kpiValues || {};
+let ceoNotes = storedState.ceoNotes || [];
 let runtimeStatus = null;
 
 function cookieValue(name) {
@@ -32,6 +33,7 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({
     taskStatuses,
     kpiValues,
+    ceoNotes,
     savedAt: new Date().toISOString()
   }));
 }
@@ -128,12 +130,35 @@ function renderRoleBadge() {
   $("#roleBadge").className = `pill ${role === "Jordan" ? "success" : ""}`;
 }
 
+function renderCeoNotes() {
+  const isJordan = currentRole() === "Jordan";
+  $("#ceoNotesPanel").classList.toggle("hidden", !isJordan);
+  if (!isJordan) return;
+
+  const openNotes = ceoNotes.filter((note) => !note.done);
+  $("#ceoNotesCount").textContent = `${openNotes.length} ouvertes`;
+  $("#ceoNotesList").innerHTML = ceoNotes.length ? ceoNotes.map((note) => `
+    <article class="ceo-note ${note.done ? "done" : ""}" data-note-id="${note.id}">
+      <button type="button" data-note-toggle="${note.id}" aria-label="Basculer note">${note.done ? "OK" : ""}</button>
+      <div>
+        <strong>${note.text}</strong>
+        <small>${new Date(note.createdAt).toLocaleString("fr-FR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}</small>
+      </div>
+      <div class="ceo-note-actions">
+        ${badge(note.priority, priorityTone(note.priority))}
+        <button type="button" data-note-delete="${note.id}" aria-label="Supprimer note">Supprimer</button>
+      </div>
+    </article>
+  `).join("") : `<p class="empty">Aucune note. Tu peux remplacer Google Keep ici pour les pense-betes rapides.</p>`;
+}
+
 function renderDashboard() {
   const critical = ILM_DATA.deadlines.filter((deadline) => !deadline[3]).slice(0, 7);
   const vanessaTasks = ILM_DATA.operationalTasks.filter((task) => task.group === "Vanessa / Sophie Banks");
   const openVanessaTasks = vanessaTasks.filter((task) => taskStatus(task) !== "Done").length;
   $("#criticalCount").textContent = `${critical.length} a traiter`;
   $("#vanessaTodoCount").textContent = `${openVanessaTasks} ouvertes`;
+  renderCeoNotes();
   renderConnections();
   renderKpiModels();
   renderTaskCards(vanessaTasks, "#vanessaTaskList");
@@ -236,8 +261,9 @@ function renderDomains() {
         <p>${domain.note}</p>
       </div>
       <div class="domain-badges">
-        ${badge(domain.status, domain.status === "Available" ? "success" : "danger")}
+        ${badge(domain.status, ["Available", "Live"].includes(domain.status) ? "success" : "danger")}
         ${badge(domain.priority, priorityTone(domain.priority))}
+        ${domain.purchaseUrl ? `<a class="mini-link" href="${domain.purchaseUrl}" target="_blank" rel="noreferrer" data-track="Domain ${domain.name}">Vercel</a>` : ""}
       </div>
     </article>
   `).join("");
@@ -311,7 +337,7 @@ function renderRecipe() {
           <span class="eyebrow">${item.owner}</span>
           <h3>${item.title}</h3>
         </div>
-        ${badge(item.status, item.status.includes("Bloque") ? "danger" : "warning")}
+        ${badge(item.status, item.status.includes("Bloque") ? "danger" : item.status.includes("Live") ? "success" : "warning")}
       </div>
       <p>${item.goal}</p>
       <ol>${item.steps.map((step) => `<li>${step}</li>`).join("")}</ol>
@@ -389,8 +415,8 @@ function renderModels() {
       </dl>
       ${model.persona ? `<p class="persona">${model.persona}</p>` : ""}
       <div class="tag-list">${model.platforms.map((item) => `<span>${item}</span>`).join("")}</div>
-      ${model.instagram ? `<div class="instagram-list">${model.instagram.map((account) => account.url ? `<a href="${account.url}" target="_blank" rel="noreferrer">@${account.label}</a>` : `<span>@${account.label}</span>`).join("")}</div>` : ""}
-      ${model.revenueLinks ? `<div class="revenue-list">${model.revenueLinks.map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer"><span>${link.type}</span>${link.label}</a>`).join("")}</div>` : ""}
+      ${model.instagram ? `<div class="instagram-list">${model.instagram.map((account) => account.url ? `<a href="${account.url}" target="_blank" rel="noreferrer" data-track="${model.name} Instagram ${account.label}">@${account.label}</a>` : `<span>@${account.label}</span>`).join("")}</div>` : ""}
+      ${model.revenueLinks ? `<div class="revenue-list">${model.revenueLinks.map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer" data-track="${model.name} ${link.type} ${link.label}"><span>${link.type}</span>${link.label}</a>`).join("")}</div>` : ""}
       <div class="split-list">
         <div>
           <h4>Risques</h4>
@@ -524,11 +550,61 @@ document.addEventListener("change", (event) => {
   }
 });
 
+document.addEventListener("click", (event) => {
+  const toggleId = event.target.dataset.noteToggle;
+  const deleteId = event.target.dataset.noteDelete;
+
+  if (toggleId) {
+    ceoNotes = ceoNotes.map((note) => note.id === toggleId ? { ...note, done: !note.done } : note);
+    saveState();
+    renderCeoNotes();
+  }
+
+  if (deleteId) {
+    ceoNotes = ceoNotes.filter((note) => note.id !== deleteId);
+    saveState();
+    renderCeoNotes();
+  }
+
+  const trackedLink = event.target.closest("a[data-track]");
+  if (trackedLink && window.va) {
+    window.va("event", {
+      name: "ILM Link Click",
+      data: {
+        label: trackedLink.dataset.track,
+        href: trackedLink.href
+      }
+    });
+  }
+});
+
+$("#ceoNoteForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const input = $("#ceoNoteInput");
+  const text = input.value.trim();
+  if (!text) return;
+
+  ceoNotes = [
+    {
+      id: `note-${Date.now()}`,
+      text,
+      priority: $("#ceoNotePriority").value,
+      done: false,
+      createdAt: new Date().toISOString()
+    },
+    ...ceoNotes
+  ];
+  input.value = "";
+  saveState();
+  renderCeoNotes();
+});
+
 $("#exportSnapshot").addEventListener("click", () => {
   const snapshot = {
     exportedAt: new Date().toISOString(),
     taskStatuses,
     kpiValues,
+    ceoNotes,
     models: ILM_DATA.models.map(({ name, status, progress, manager, niche }) => ({ name, status, progress, manager, niche })),
     connections: ILM_DATA.connections,
     kpiBlueprints: ILM_DATA.kpiBlueprints,
