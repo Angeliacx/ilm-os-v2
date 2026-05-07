@@ -477,6 +477,55 @@ function renderProcess() {
   `).join("");
 }
 
+function architectureTone(status) {
+  return {
+    Live: "success",
+    Done: "success",
+    "In progress": "warning",
+    "To do": "warning",
+    "A recuperer": "warning",
+    "A brancher": "warning",
+    "A venir": "warning",
+    "Needs Jordan": "danger"
+  }[status] || "";
+}
+
+function renderArchitecture() {
+  const { domains, owners, roadmap } = ILM_DATA.architecture;
+  const openItems = roadmap.filter((item) => item.status !== "Done").length;
+  $("#architectureCount").textContent = `${openItems} etapes ouvertes`;
+  $("#architectureDomains").innerHTML = domains.map((item) => `
+    <article class="architecture-row">
+      <div>
+        <strong>${item.name}</strong>
+        <p>${item.role}</p>
+      </div>
+      ${badge(item.status, architectureTone(item.status))}
+    </article>
+  `).join("");
+  $("#architectureOwners").innerHTML = owners.map((item) => `
+    <article class="architecture-row">
+      <div>
+        <strong>${item.name}</strong>
+        <p>${item.scope}</p>
+      </div>
+    </article>
+  `).join("");
+  $("#architectureRoadmap").innerHTML = roadmap.map((item) => `
+    <article class="recipe-card">
+      <div class="recipe-head">
+        <div>
+          <span class="eyebrow">${item.owner}</span>
+          <h3>${item.title}</h3>
+        </div>
+        ${badge(item.status, architectureTone(item.status))}
+      </div>
+      <p>${item.goal}</p>
+      <ol>${item.steps.map((step) => `<li>${step}</li>`).join("")}</ol>
+    </article>
+  `).join("");
+}
+
 function renderNotion() {
   const pageCards = ILM_DATA.notionPages.map(([title, id]) => `
     <article class="notion-card">
@@ -511,6 +560,7 @@ function renderAll() {
   renderTeam();
   renderDeadlines();
   renderProcess();
+  renderArchitecture();
   renderRecipe();
   renderNotion();
 }
@@ -608,7 +658,8 @@ $("#exportSnapshot").addEventListener("click", () => {
     models: ILM_DATA.models.map(({ name, status, progress, manager, niche }) => ({ name, status, progress, manager, niche })),
     connections: ILM_DATA.connections,
     kpiBlueprints: ILM_DATA.kpiBlueprints,
-    dailyOps: ILM_DATA.dailyOps
+    dailyOps: ILM_DATA.dailyOps,
+    architecture: ILM_DATA.architecture
   };
   const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);

@@ -950,5 +950,87 @@ const ILM_DATA = {
     ["Model Script Brief", "6 phases: intro, clothed tease, undressing, soft, masturbation, climax. 2-3 par semaine."],
     ["Regles IG", "0 hashtag interdit, 5-10 par post, max 20 follows/jour, max 30 likes/session, meme appareil et IP 2 semaines."],
     ["Formats", "Photo 1080x1350, story/reel 1080x1920, JPEG 85-95%, H.264 30fps+."]
-  ]
+  ],
+  architecture: {
+    domains: [
+      {
+        name: "ilovemodels.fr",
+        status: "A recuperer",
+        role: "Vitrine publique pour nouvelles modeles, image de marque, candidatures et confiance."
+      },
+      {
+        name: "os.ilovemodels.fr",
+        status: "A brancher",
+        role: "Dashboard prive ILM Agency OS, protege par mot de passe et reserve a l'equipe."
+      },
+      {
+        name: "madamevanessaoff.com",
+        status: "Live",
+        role: "Deeplink propre Vanessa vers MYM et Telegram, avec routes de tracking."
+      },
+      {
+        name: "Olesia / Juliette",
+        status: "A venir",
+        role: "Deeplinks propres par modele, puis KPI et tracking dedies."
+      }
+    ],
+    owners: [
+      {
+        name: "Jordan",
+        scope: "Recuperer le domaine, valider les noms, donner les contenus, choisir les mots de passe et arbitrer les priorites."
+      },
+      {
+        name: "Codex",
+        scope: "Construire, publier, brancher Vercel, structurer le dashboard, preparer les recettes et documenter chaque etape."
+      },
+      {
+        name: "Equipe",
+        scope: "Executer les taches visibles dans l'OS: contenus, reels, comptes, plateformes, reporting et suivi."
+      }
+    ],
+    roadmap: [
+      {
+        title: "Base ILM OS",
+        status: "Done",
+        owner: "Codex",
+        goal: "Avoir un dashboard prive utilisable des maintenant.",
+        steps: ["Dashboard Vercel publie.", "Mot de passe admin actif.", "Modeles, taches, domaines et KPI manuels visibles."]
+      },
+      {
+        title: "Domaine principal",
+        status: "Needs Jordan",
+        owner: "Jordan",
+        goal: "Recuperer ilovemodels.fr et donner l'acces DNS ou Vercel.",
+        steps: ["Recuperer le domaine cet apres-midi.", "Verifier le registrar.", "Donner la main DNS ou connecter le domaine a Vercel."]
+      },
+      {
+        title: "Vitrine publique",
+        status: "In progress",
+        owner: "Codex",
+        goal: "Preparer ilovemodels.fr comme site propre pour nouvelles modeles.",
+        steps: ["Creer une premiere version publique.", "Ajouter branding ILM.", "Prevoir candidature et lien vers l'OS prive."]
+      },
+      {
+        title: "OS prive sur sous-domaine",
+        status: "To do",
+        owner: "Codex",
+        goal: "Brancher os.ilovemodels.fr au dashboard prive.",
+        steps: ["Ajouter le domaine au projet Vercel ILM.", "Configurer DNS.", "Verifier login et redirections."]
+      },
+      {
+        title: "Agency OS data driven",
+        status: "To do",
+        owner: "Jordan + Codex",
+        goal: "Passer des KPI manuels aux KPI connectes.",
+        steps: ["Activer Vercel Analytics.", "Brancher tracking links.", "Preparer stockage serveur.", "Connecter exports/API Meta, TikTok, Telegram, Notion, OF/MYM si viable."]
+      },
+      {
+        title: "Acces equipe",
+        status: "To do",
+        owner: "Jordan + Codex",
+        goal: "Donner un acces clair a chaque membre.",
+        steps: ["Choisir mots de passe par role.", "Ajouter variables Vercel.", "Tester chaque role.", "Distribuer les acces."]
+      }
+    ]
+  }
 };

@@ -31,6 +31,12 @@ La page `/dashboard` redirige vers `/dashboard.html`.
 npx vercel deploy --prod --yes
 ```
 
+## Architecture domaine cible
+
+- `ilovemodels.fr` : vitrine publique pour nouvelles modeles, projet `sites/ilovemodels-public`
+- `os.ilovemodels.fr` : dashboard prive ILM Agency OS, projet `ilm`
+- domaines modeles : deeplinks propres par modele, ex. `madamevanessaoff.com`
+
 ## Connecter Notion plus tard
 
 Page source :

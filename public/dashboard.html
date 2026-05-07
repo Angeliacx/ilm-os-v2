@@ -27,6 +27,7 @@
           <a href="#team" data-route="team">Équipe</a>
           <a href="#deadlines" data-route="deadlines">Deadlines</a>
           <a href="#process" data-route="process">Process</a>
+          <a href="#architecture" data-route="architecture">Architecture</a>
           <a href="#recipe" data-route="recipe">Recette</a>
           <a href="#notion" data-route="notion">Notion</a>
         </nav>
@@ -229,6 +230,47 @@
             </div>
           </div>
           <div id="processGrid" class="process-grid"></div>
+        </section>
+
+        <section id="architecture" class="view" aria-labelledby="architecture-title">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Architecture cible</span>
+              <h2 id="architecture-title">ILM Agency OS data driven</h2>
+            </div>
+          </div>
+          <div class="ops-support-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Domaines</span>
+                  <h3>Structure publique / privee</h3>
+                </div>
+                <span class="pill success">Valide</span>
+              </div>
+              <div id="architectureDomains" class="architecture-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Responsabilites</span>
+                  <h3>Ce que Jordan / Codex font</h3>
+                </div>
+                <span class="pill">Roadmap</span>
+              </div>
+              <div id="architectureOwners" class="architecture-list"></div>
+            </section>
+          </div>
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Etapes</span>
+                <h3>Fait / en cours / reste a faire</h3>
+              </div>
+              <span id="architectureCount" class="pill warning"></span>
+            </div>
+            <div id="architectureRoadmap" class="recipe-grid"></div>
+          </section>
         </section>
 
         <section id="recipe" class="view" aria-labelledby="recipe-title">

@@ -35,6 +35,14 @@ Projet Vercel Madame Vanessa :
 
 `prj_EQbBVfDNxDGpmQMrEpA5x3CPpUYY`
 
+Vitrine publique ILM :
+
+`https://ilovemodels-public.vercel.app`
+
+Projet Vercel vitrine publique :
+
+`prj_HckbFzI0t8CalsDqaRec7uDSi05l`
+
 ## Fichiers principaux
 
 - `index.html` : structure statique du dashboard
@@ -45,6 +53,7 @@ Projet Vercel Madame Vanessa :
 - `app/api/status/route.js` : statut runtime sans exposer les secrets
 - `middleware.js` : protection des routes
 - `public/*` : fichiers servis en production
+- `sites/ilovemodels-public/*` : vitrine publique cible `ilovemodels.fr`
 
 Important : apres modification de `index.html`, `app.js`, `data.js`, ou `styles.css`, copier aussi vers `public/` :
 
@@ -74,6 +83,7 @@ Actuellement en production :
 - routes de tracking clic : `/go/mym` et `/go/telegram`
 - `olesia.com` est indisponible au 07/05/2026 ; options disponibles verifiees : `olesiaofficial.com`, `olesiaxoxo.com`, `liabunnyy.com`
 - priorite ajoutee : ranger tout le contenu Sophie sur MYM par collections, transferer ensuite vers Unly, acheter 2 programmes Unly, puis verifier si Olesia peut passer rapidement sur OF ou MYM
+- architecture validee : `ilovemodels.fr` = vitrine publique, `os.ilovemodels.fr` = dashboard prive ILM OS
 
 ## Recette
 
@@ -95,7 +105,9 @@ Puis tester :
 ## Priorites suivantes
 
 1. Ajouter les mots de passe role dans Vercel.
-2. Faire marcher Notion MCP ou une integration Notion token.
-3. Transformer les KPI manuels en KPI synchronises.
-4. Ajouter un vrai stockage serveur si les statuts doivent etre partages par toute l'equipe.
-5. Brancher Meta/Instagram apres validation Business/Creator + Meta Business.
+2. Brancher `ilovemodels.fr` sur `ilovemodels-public`.
+3. Brancher `os.ilovemodels.fr` sur le projet ILM prive.
+4. Faire marcher Notion MCP ou une integration Notion token.
+5. Transformer les KPI manuels en KPI synchronises.
+6. Ajouter un vrai stockage serveur si les statuts doivent etre partages par toute l'equipe.
+7. Brancher Meta/Instagram apres validation Business/Creator + Meta Business.
