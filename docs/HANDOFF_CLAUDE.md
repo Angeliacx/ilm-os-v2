@@ -93,7 +93,7 @@ Actuellement en production :
 - priorite ajoutee : ranger tout le contenu Sophie sur MYM par collections, transferer ensuite vers Unly, acheter 2 programmes Unly, puis verifier si Olesia peut passer rapidement sur OF ou MYM
 - architecture validee : `ilovemodels.fr` = vitrine publique, `os.ilovemodels.fr` = dashboard prive ILM OS
 - priorite branding ajoutee : creer une page Instagram ILM ultra sobre, orientee talent/mannequin, sans vocabulaire OF/adulte
-- Vercel attend les preuves DNS OVH pour `ilovemodels.fr`, `www.ilovemodels.fr` et `os.ilovemodels.fr`
+- DNS OVH et Vercel valides : `ilovemodels.fr`, `www.ilovemodels.fr` et `os.ilovemodels.fr` sont verifies et live
 
 ## Recette
 

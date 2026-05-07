@@ -654,11 +654,11 @@ const ILM_DATA = {
         group: "Daily Ops",
         title: "DNS OVH ilovemodels.fr",
         priority: "High",
-        status: "In progress",
+        status: "Done",
         owner: "Jordan",
         deadline: "Cette semaine",
-        summary: "Ajouter les preuves DNS Vercel chez OVH pour brancher la vitrine publique et le dashboard prive.",
-        actions: ["Dans OVH, ajouter les 3 TXT _vercel.", "Ajouter A @ vers 76.76.21.21.", "Ajouter CNAME www et os vers cname.vercel-dns.com.", "Demander a Codex de verifier apres propagation."]
+        summary: "DNS OVH ajoute, domaines verifies et branches sur Vercel.",
+        actions: ["ilovemodels.fr live.", "www.ilovemodels.fr live.", "os.ilovemodels.fr live et protege par mot de passe.", "Garder les entrees DNS OVH en place."]
       },
       {
         id: "ops-elie-domain",
@@ -975,12 +975,12 @@ const ILM_DATA = {
     domains: [
       {
         name: "ilovemodels.fr",
-        status: "A recuperer",
+        status: "Live",
         role: "Vitrine publique pour nouvelles modeles, image de marque, candidatures et confiance."
       },
       {
         name: "os.ilovemodels.fr",
-        status: "A brancher",
+        status: "Live",
         role: "Dashboard prive ILM Agency OS, protege par mot de passe et reserve a l'equipe."
       },
       {
@@ -1018,10 +1018,10 @@ const ILM_DATA = {
       },
       {
         title: "Domaine principal",
-        status: "Needs Jordan",
-        owner: "Jordan",
+        status: "Done",
+        owner: "Jordan + Codex",
         goal: "Recuperer ilovemodels.fr et ajouter les entrees DNS OVH demandees par Vercel.",
-        steps: ["Dans OVH, ouvrir la zone DNS ilovemodels.fr.", "Ajouter 3 TXT _vercel pour prouver le domaine.", "Ajouter A @ vers 76.76.21.21.", "Ajouter CNAME www et os vers Vercel.", "Demander a Codex de verifier."]
+        steps: ["Domaine recupere dans OVH.", "3 TXT _vercel ajoutes.", "A @ vers 76.76.21.21 ajoute.", "CNAME www et os vers Vercel ajoutes.", "Validation Vercel terminee."]
       },
       {
         title: "Vitrine publique",
@@ -1039,10 +1039,10 @@ const ILM_DATA = {
       },
       {
         title: "OS prive sur sous-domaine",
-        status: "To do",
+        status: "Done",
         owner: "Codex",
         goal: "Brancher os.ilovemodels.fr au dashboard prive.",
-        steps: ["Ajouter le domaine au projet Vercel ILM.", "Configurer DNS.", "Verifier login et redirections."]
+        steps: ["Domaine ajoute au projet Vercel ILM.", "DNS OVH configure.", "Login et dashboard verifies sur os.ilovemodels.fr."]
       },
       {
         title: "Agency OS data driven",
