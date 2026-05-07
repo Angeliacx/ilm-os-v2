@@ -1,12 +1,13 @@
 :root {
   color-scheme: dark;
   --bg: #08070c;
-  --panel: #121018;
-  --line: rgba(239, 223, 206, 0.18);
-  --text: #f6efe8;
-  --muted: #b7a99e;
-  --gold: #eadcc5;
-  --soft: rgba(234, 220, 197, 0.1);
+  --card: rgba(12, 10, 15, 0.78);
+  --line: rgba(255, 238, 226, 0.18);
+  --text: #fff8f3;
+  --muted: rgba(255, 248, 243, 0.7);
+  --rose: #ffd6df;
+  --rose-strong: #ffb8c9;
+  --shadow: 0 28px 90px rgba(0, 0, 0, 0.46);
 }
 
 * {
@@ -17,10 +18,22 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 16% 0%, rgba(234, 220, 197, 0.12), transparent 28rem),
-    linear-gradient(145deg, #050407, var(--bg));
+    linear-gradient(180deg, rgba(8, 7, 12, 0.38), rgba(8, 7, 12, 0.84)),
+    url("assets/cover.jpeg") center 30% / cover no-repeat fixed,
+    var(--bg);
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  content: "";
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 214, 223, 0.28), transparent 22rem),
+    rgba(8, 7, 12, 0.18);
+  backdrop-filter: blur(9px);
+  pointer-events: none;
 }
 
 a {
@@ -29,6 +42,8 @@ a {
 }
 
 .page {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   display: grid;
   place-items: center;
@@ -36,42 +51,45 @@ a {
 }
 
 .profile {
-  width: min(980px, 100%);
-  display: grid;
-  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1fr);
-  gap: 0;
+  width: min(440px, 100%);
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(18, 16, 24, 0.72);
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.36);
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow);
 }
 
-.portrait {
-  min-height: 620px;
-  background: var(--panel);
-}
-
-.portrait img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center 28%;
-  opacity: 0.86;
+.cover {
+  min-height: 172px;
+  background:
+    linear-gradient(180deg, rgba(8, 7, 12, 0), rgba(8, 7, 12, 0.36)),
+    url("assets/cover.jpeg") center 24% / cover no-repeat;
 }
 
 .content {
   display: grid;
-  align-content: center;
-  gap: 20px;
-  padding: clamp(28px, 6vw, 72px);
+  justify-items: center;
+  gap: 16px;
+  padding: 0 24px 26px;
+  text-align: center;
+}
+
+.avatar {
+  width: 118px;
+  height: 118px;
+  display: block;
+  margin-top: -59px;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 4px solid rgba(12, 10, 15, 0.94);
+  border-radius: 999px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
 }
 
 .eyebrow {
   margin: 0;
-  color: var(--gold);
-  font-size: 12px;
+  color: var(--rose);
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -79,36 +97,37 @@ a {
 
 h1 {
   margin: 0;
-  color: var(--gold);
+  color: var(--text);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(46px, 8vw, 96px);
+  font-size: clamp(42px, 11vw, 58px);
   font-weight: 400;
   line-height: 0.9;
 }
 
 .intro {
-  max-width: 520px;
+  max-width: 330px;
   margin: 0;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
 .links {
+  width: 100%;
   display: grid;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .links a {
   display: flex;
-  min-height: 54px;
+  min-height: 56px;
   align-items: center;
   justify-content: space-between;
   padding: 0 18px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--soft);
+  border: 1px solid rgba(255, 214, 223, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 214, 223, 0.1);
   color: var(--text);
   font-size: 15px;
   font-weight: 900;
@@ -116,23 +135,25 @@ h1 {
 
 .links a::after {
   content: ">";
-  color: var(--gold);
+  color: var(--rose-strong);
 }
 
 small {
-  color: rgba(246, 239, 232, 0.48);
+  color: rgba(255, 248, 243, 0.5);
+  font-size: 12px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 460px) {
+  .page {
+    align-items: end;
+    padding: 18px;
+  }
+
   .profile {
-    grid-template-columns: 1fr;
+    border-radius: 22px;
   }
 
-  .portrait {
-    min-height: 420px;
-  }
-
-  .content {
-    padding: 26px;
+  .cover {
+    min-height: 150px;
   }
 }

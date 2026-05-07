@@ -29,7 +29,7 @@ Projet Vercel ILM :
 
 Mini-site Madame Vanessa :
 
-`https://madame-vanessa.vercel.app`
+`https://madamevanessaoff.com`
 
 Projet Vercel Madame Vanessa :
 
@@ -69,7 +69,9 @@ Actuellement en production :
 - `ILM_PASSWORD` est configure
 - les mots de passe equipe ne sont pas encore configures
 - les connecteurs Notion / Meta / TikTok / Telegram / X ne sont pas encore configures
-- le mini-site Madame Vanessa est deploye, mais le domaine `.com` n'est pas encore achete/branche
+- le mini-site Madame Vanessa est deploye et branche sur `madamevanessaoff.com`
+- liens actifs Vanessa : `Mon jardin secret 🌹` vers MYM Sophie Banks, `Telegram des betises 🍬` vers le canal Telegram
+- routes de tracking clic : `/go/mym` et `/go/telegram`
 
 ## Recette
 

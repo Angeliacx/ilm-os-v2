@@ -158,7 +158,7 @@ const ILM_DATA = {
       revenueLinks: [
         { type: "OnlyFans", label: "madamevanessaoff", url: "https://onlyfans.com/madamevanessaoff" },
         { type: "MYM", label: "Sophiebanks", url: "https://mym.fans/Sophiebanks" },
-        { type: "Website", label: "mmevanessa.com", url: "https://www.mmevanessa.com/" },
+        { type: "Website", label: "madamevanessaoff.com", url: "https://madamevanessaoff.com" },
         { type: "Telegram", label: "Canal Vanessa", url: "https://t.me/+KfrNnp3lETU4OWY8" }
       ],
       risks: ["Queenvanessa_off restreint", "Vacances 18-26 avril"],
@@ -550,10 +550,10 @@ const ILM_DATA = {
     },
     {
       name: "madamevanessaoff.com",
-      status: "Available",
+      status: "Live",
       priority: "High",
-      note: "Meilleure option .com disponible: proche du compte IG/OF, clair, $11.25/an cote Vercel.",
-      purchaseUrl: "https://vercel.com/domains/search?q=madamevanessaoff.com"
+      note: "Domaine achete, branche au projet madame-vanessa et live. Les clics passent par /go/mym et /go/telegram.",
+      purchaseUrl: "https://madamevanessaoff.com"
     },
     {
       name: "mmevanessaoff.com",
@@ -674,9 +674,8 @@ const ILM_DATA = {
       owner: "Jordan",
       steps: [
         "Preview live: https://madame-vanessa.vercel.app",
-        "Choisir le .com final.",
-        "Acheter le domaine dans Vercel.",
-        "Ajouter le domaine au projet madame-vanessa.",
+        "Domaine live: https://madamevanessaoff.com",
+        "Clics trackables via /go/mym et /go/telegram.",
         "Activer Web Analytics pour suivre page views et clics."
       ]
     },
