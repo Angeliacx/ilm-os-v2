@@ -652,13 +652,13 @@ const ILM_DATA = {
       {
         id: "ops-domain-vercel",
         group: "Daily Ops",
-        title: "Vercel + nom de domaine",
+        title: "DNS OVH ilovemodels.fr",
         priority: "High",
         status: "In progress",
         owner: "Jordan",
         deadline: "Cette semaine",
-        summary: "Recreer un Vercel avec un nom de domaine propre.",
-        actions: ["Finaliser le dashboard.", "Brancher le domaine.", "Verifier la protection par mot de passe."]
+        summary: "Ajouter les preuves DNS Vercel chez OVH pour brancher la vitrine publique et le dashboard prive.",
+        actions: ["Dans OVH, ajouter les 3 TXT _vercel.", "Ajouter A @ vers 76.76.21.21.", "Ajouter CNAME www et os vers cname.vercel-dns.com.", "Demander a Codex de verifier apres propagation."]
       },
       {
         id: "ops-elie-domain",
@@ -1020,8 +1020,8 @@ const ILM_DATA = {
         title: "Domaine principal",
         status: "Needs Jordan",
         owner: "Jordan",
-        goal: "Recuperer ilovemodels.fr et donner l'acces DNS ou Vercel.",
-        steps: ["Recuperer le domaine cet apres-midi.", "Verifier le registrar.", "Donner la main DNS ou connecter le domaine a Vercel."]
+        goal: "Recuperer ilovemodels.fr et ajouter les entrees DNS OVH demandees par Vercel.",
+        steps: ["Dans OVH, ouvrir la zone DNS ilovemodels.fr.", "Ajouter 3 TXT _vercel pour prouver le domaine.", "Ajouter A @ vers 76.76.21.21.", "Ajouter CNAME www et os vers Vercel.", "Demander a Codex de verifier."]
       },
       {
         title: "Vitrine publique",
