@@ -10,9 +10,11 @@ async function sessionToken(password) {
 function credentials() {
   return [
     ["Jordan", process.env.ILM_PASSWORD],
+    ["Sophie", process.env.ILM_PASSWORD_SOPHIE],
     ["Louis", process.env.ILM_PASSWORD_LOUIS],
     ["Vanessa", process.env.ILM_PASSWORD_VANESSA],
     ["Juliette", process.env.ILM_PASSWORD_JULIETTE],
+    ["Ned", process.env.ILM_PASSWORD_NED],
     ["Marvin", process.env.ILM_PASSWORD_MARVIN],
     ["Team", process.env.ILM_PASSWORD_TEAM]
   ].filter(([, password]) => Boolean(password));

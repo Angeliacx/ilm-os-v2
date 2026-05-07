@@ -93,7 +93,7 @@ const ILM_DATA = {
       status: "In progress",
       priority: "High",
       purpose: "Heberger ILM OS, proteger l'acces et preparer les deeplinks propres.",
-      next: "Vercel Madame Vanessa live. Choisir et acheter le .com, puis le brancher au projet."
+      next: "Madame Vanessa est live sur madamevanessaoff.com. Prochaine etape: choisir le domaine Olesia et preparer le Vercel Olesia."
     }
   ],
   kpiBlueprints: [
@@ -131,6 +131,7 @@ const ILM_DATA = {
         ["IG comptes", "2 connus"],
         ["Warm-up", "A suivre"],
         ["Reels", "A produire"],
+        ["Vercel Olesia", "Domaine a choisir"],
         ["OF/MYM", "Pas encore"]
       ]
     }
@@ -232,6 +233,7 @@ const ILM_DATA = {
     ["iPhone 13 PRO", "Ned", "Olesia", "2"],
     ["Samsung", "Ned", "Olesia", "3"],
     ["iPhone 15", "Florian", "Vanessa", "2"],
+    ["Nouveau tel Jordan", "Jordan", "Vanessa / Juliette / Olesia", "3"],
     ["Tel Koce", "Koce", "Libre", "0"]
   ],
   operationalTasks: [
@@ -342,8 +344,26 @@ const ILM_DATA = {
     }
   ],
   dailyOps: {
-    date: "2026-05-06",
+    date: "2026-05-07",
     doneToday: [
+      {
+        title: "Point compta Sophie fait",
+        owner: "Jordan + Sophie",
+        area: "Comptabilite",
+        summary: "Appel vers 13h. Sophie est informee: la compta sera reprise apres juillet, avec planning et budget dans l'agenda."
+      },
+      {
+        title: "Prompt planning/budget Sophie pret",
+        owner: "Jordan",
+        area: "Sophie",
+        summary: "Le prompt pour que Sophie mette son planning et son budget dans l'agenda existe deja. Objectif: donner l'acces de suivi a Jordan."
+      },
+      {
+        title: "Domaine Madame Vanessa branche",
+        owner: "Jordan",
+        area: "Vercel",
+        summary: "madamevanessaoff.com est achete, connecte au projet Vercel et sert de deeplink propre vers MYM et Telegram."
+      },
       {
         title: "Louis - implementation IA avancee",
         owner: "Louis",
@@ -400,6 +420,94 @@ const ILM_DATA = {
       }
     ],
     nextTasks: [
+      {
+        id: "ops-sophie-meeting-tuesday",
+        group: "Daily Ops",
+        title: "Preparer RDV Sophie",
+        priority: "High",
+        status: "To do",
+        owner: "Jordan",
+        deadline: "Mardi apres-midi",
+        summary: "Preparer le point Sophie: compta apres juillet, planning, budget, reels et comptes Instagram.",
+        actions: ["Reprendre les notes compta.", "Preparer le prompt agenda.", "Lister les reels et comptes a creer."]
+      },
+      {
+        id: "ops-sophie-sunday-availability",
+        group: "Daily Ops",
+        title: "Exploiter dispo Sophie dimanche",
+        priority: "Medium",
+        status: "To do",
+        owner: "Jordan + Sophie",
+        deadline: "Dimanche",
+        summary: "Sophie est aussi disponible dimanche: garder ce crenau pour contenu, planning ou compta simple.",
+        actions: ["Choisir le sujet avant dimanche.", "Bloquer un creneau utile dans l'agenda."]
+      },
+      {
+        id: "ops-vanessa-new-reels",
+        group: "Daily Ops",
+        title: "Nouveaux reels Vanessa",
+        priority: "High",
+        status: "To do",
+        owner: "Sophie + Jordan",
+        deadline: "Cette semaine",
+        summary: "Relancer Vanessa avec de nouveaux reels simples, rapides et exploitables sur Instagram/TikTok.",
+        actions: ["Lister 5 formats reels faciles.", "Tourner ou recreer les meilleurs formats.", "Publier puis suivre les vues."]
+      },
+      {
+        id: "ops-new-ig-vanessa-olesia",
+        group: "Daily Ops",
+        title: "Nouveaux comptes IG Vanessa + Olesia",
+        priority: "High",
+        status: "To do",
+        owner: "Jordan + Ned",
+        deadline: "Cette semaine",
+        summary: "Ouvrir de nouveaux canaux Instagram pour Vanessa et Olesia sans saturer les telephones existants.",
+        actions: ["Verifier la place restante chez Ned.", "Decider quels comptes vont sur le nouveau telephone Jordan.", "Demarrer le warm-up proprement."]
+      },
+      {
+        id: "ops-louis-two-more-accounts",
+        group: "Daily Ops",
+        title: "Voir Louis pour 2 comptes en plus",
+        priority: "Medium",
+        status: "To do",
+        owner: "Jordan + Louis",
+        deadline: "A caler",
+        summary: "Verifier avec Louis comment ajouter deux comptes supplementaires sans perdre le suivi.",
+        actions: ["Valider le modele concerne.", "Valider telephone/IP.", "Ajouter les comptes au dashboard apres creation."]
+      },
+      {
+        id: "ops-ned-capacity-check",
+        group: "Daily Ops",
+        title: "Verifier capacite NED",
+        priority: "High",
+        status: "To do",
+        owner: "Jordan + Ned",
+        deadline: "Avant creation IG",
+        summary: "Savoir combien de comptes Instagram Ned peut encore gerer sur ses appareils.",
+        actions: ["Compter les comptes par telephone.", "Verifier appareil/IP disponible.", "Decider si Olesia reste chez Ned ou passe sur le nouveau telephone Jordan."]
+      },
+      {
+        id: "ops-jordan-new-phone-accounts",
+        group: "Daily Ops",
+        title: "Plan nouveau telephone Jordan",
+        priority: "Medium",
+        status: "To do",
+        owner: "Jordan",
+        deadline: "A reception du telephone",
+        summary: "Preparer 3 comptes sur le nouveau telephone: Vanessa, Juliette et Olesia.",
+        actions: ["Installer uniquement les apps utiles.", "Creer un compte par modele.", "Noter les logins dans le coffre/Notion quand disponible."]
+      },
+      {
+        id: "ops-olesia-vercel-domain",
+        group: "Daily Ops",
+        title: "Choisir domaine Olesia",
+        priority: "Medium",
+        status: "To do",
+        owner: "Jordan",
+        deadline: "Apres Vanessa",
+        summary: "olesia.com est indisponible. Les options propres a choisir sont olesiaofficial.com, olesiaxoxo.com ou liabunnyy.com.",
+        actions: ["Choisir l'angle: officiel, lifestyle ou persona.", "Acheter le domaine choisi.", "Creer ensuite le Vercel Olesia comme deeplink propre."]
+      },
       {
         id: "ops-vanessa-mym-content-tonight",
         group: "Daily Ops",
@@ -556,6 +664,33 @@ const ILM_DATA = {
       purchaseUrl: "https://madamevanessaoff.com"
     },
     {
+      name: "olesia.com",
+      status: "Unavailable",
+      priority: "High",
+      note: "Indisponible a l'achat au 07/05/2026. Trop court et ideal, mais il ne faut pas bloquer le projet dessus."
+    },
+    {
+      name: "olesiaofficial.com",
+      status: "Available",
+      priority: "High",
+      note: "Option la plus propre pour un site officiel Olesia. Disponible a $11.25/an cote Vercel.",
+      purchaseUrl: "https://vercel.com/domains/search?q=olesiaofficial.com"
+    },
+    {
+      name: "olesiaxoxo.com",
+      status: "Available",
+      priority: "High",
+      note: "Option plus proche de ses comptes Instagram et plus douce pour un deeplink lifestyle. Disponible a $11.25/an cote Vercel.",
+      purchaseUrl: "https://vercel.com/domains/search?q=olesiaxoxo.com"
+    },
+    {
+      name: "liabunnyy.com",
+      status: "Available",
+      priority: "Medium",
+      note: "Option persona si on garde l'axe Liabunnyy. Disponible a $11.25/an cote Vercel.",
+      purchaseUrl: "https://vercel.com/domains/search?q=liabunnyy.com"
+    },
+    {
       name: "mmevanessaoff.com",
       status: "Available",
       priority: "High",
@@ -590,7 +725,14 @@ const ILM_DATA = {
       role: "CEO / Direction",
       access: "ILM_PASSWORD",
       objective: "Piloter priorites, domaine, Notion, comptabilite et arbitrages.",
-      tasks: ["Valider domaine deeplink Vanessa", "Publier les prochaines evolutions ILM OS", "Finaliser declaration de revenu"]
+      tasks: ["Preparer RDV Sophie mardi", "Choisir domaine Olesia", "Finaliser declaration de revenu"]
+    },
+    {
+      name: "Sophie",
+      role: "Gestionnaire Vanessa",
+      access: "ILM_PASSWORD_SOPHIE",
+      objective: "Piloter planning, budget, contenus Vanessa et nouveaux reels.",
+      tasks: ["RDV mardi apres-midi", "Planning/budget dans agenda", "Nouveaux reels Vanessa"]
     },
     {
       name: "Louis",
@@ -604,7 +746,7 @@ const ILM_DATA = {
       role: "Modele / contenu",
       access: "ILM_PASSWORD_VANESSA",
       objective: "Produire le contenu utile pour MYM, Telegram, TikTok et relance US.",
-      tasks: ["20 videos Telegram", "Contenu MYM complet", "Formats Buzz Reels"]
+      tasks: ["20 videos Telegram", "Nouveaux reels", "Formats Buzz Reels"]
     },
     {
       name: "Juliette",
@@ -612,6 +754,13 @@ const ILM_DATA = {
       access: "ILM_PASSWORD_JULIETTE",
       objective: "Avancer Unly, visuels, rendez-vous et positionnement biker girl.",
       tasks: ["RDV 19h30", "Banniere + PP", "Validation Unly"]
+    },
+    {
+      name: "Ned",
+      role: "Social media manager",
+      access: "ILM_PASSWORD_NED",
+      objective: "Gerer Olesia, verifier la capacite telephone et preparer les comptes IG.",
+      tasks: ["Verifier capacite telephone", "Nouveaux comptes Olesia", "Reels Olesia"]
     },
     {
       name: "Marvin",
@@ -625,7 +774,7 @@ const ILM_DATA = {
       role: "Execution",
       access: "ILM_PASSWORD_TEAM",
       objective: "Executer les actions quotidiennes sans perdre les infos dans les notes.",
-      tasks: ["TikTok reposting", "X launch", "Agence influence"]
+      tasks: ["Verifier capacite NED", "TikTok reposting", "Agence influence"]
     }
   ],
   accessMatrix: [
@@ -633,6 +782,12 @@ const ILM_DATA = {
       role: "Jordan",
       passwordEnv: "ILM_PASSWORD",
       scope: "Tout voir, arbitrer, publier, domaines, finances, connexions.",
+      firstView: "Dashboard"
+    },
+    {
+      role: "Sophie",
+      passwordEnv: "ILM_PASSWORD_SOPHIE",
+      scope: "Vanessa, planning, budget, reels, disponibilites et actions a faire.",
       firstView: "Dashboard"
     },
     {
@@ -651,6 +806,12 @@ const ILM_DATA = {
       role: "Juliette",
       passwordEnv: "ILM_PASSWORD_JULIETTE",
       scope: "Missions Arthemys, RDV, Unly, bannieres, contenus a valider.",
+      firstView: "Modeles"
+    },
+    {
+      role: "Ned",
+      passwordEnv: "ILM_PASSWORD_NED",
+      scope: "Olesia, comptes Instagram, reels, warm-up et capacite telephones.",
       firstView: "Modeles"
     },
     {

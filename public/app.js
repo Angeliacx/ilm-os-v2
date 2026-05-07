@@ -261,7 +261,7 @@ function renderDomains() {
         <p>${domain.note}</p>
       </div>
       <div class="domain-badges">
-        ${badge(domain.status, ["Available", "Live"].includes(domain.status) ? "success" : "danger")}
+        ${badge(domain.status, ["Available", "Live", "Selected"].includes(domain.status) ? "success" : "danger")}
         ${badge(domain.priority, priorityTone(domain.priority))}
         ${domain.purchaseUrl ? `<a class="mini-link" href="${domain.purchaseUrl}" target="_blank" rel="noreferrer" data-track="Domain ${domain.name}">Vercel</a>` : ""}
       </div>

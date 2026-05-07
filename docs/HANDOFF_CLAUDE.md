@@ -67,11 +67,12 @@ Voir `.env.example`.
 Actuellement en production :
 
 - `ILM_PASSWORD` est configure
-- les mots de passe equipe ne sont pas encore configures
+- les mots de passe equipe ne sont pas encore configures (`ILM_PASSWORD_SOPHIE`, `ILM_PASSWORD_NED`, `ILM_PASSWORD_LOUIS`, `ILM_PASSWORD_VANESSA`, `ILM_PASSWORD_JULIETTE`, `ILM_PASSWORD_MARVIN`, `ILM_PASSWORD_TEAM`)
 - les connecteurs Notion / Meta / TikTok / Telegram / X ne sont pas encore configures
 - le mini-site Madame Vanessa est deploye et branche sur `madamevanessaoff.com`
 - liens actifs Vanessa : `Mon jardin secret 🌹` vers MYM Sophie Banks, `Telegram des betises 🍬` vers le canal Telegram
 - routes de tracking clic : `/go/mym` et `/go/telegram`
+- `olesia.com` est indisponible au 07/05/2026 ; options disponibles verifiees : `olesiaofficial.com`, `olesiaxoxo.com`, `liabunnyy.com`
 
 ## Recette
 

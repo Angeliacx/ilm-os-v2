@@ -9,9 +9,11 @@ async function sessionToken(password) {
 function passwords() {
   return [
     process.env.ILM_PASSWORD,
+    process.env.ILM_PASSWORD_SOPHIE,
     process.env.ILM_PASSWORD_LOUIS,
     process.env.ILM_PASSWORD_VANESSA,
     process.env.ILM_PASSWORD_JULIETTE,
+    process.env.ILM_PASSWORD_NED,
     process.env.ILM_PASSWORD_MARVIN,
     process.env.ILM_PASSWORD_TEAM
   ].filter(Boolean);

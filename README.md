@@ -52,9 +52,11 @@ Pour que Codex voie la page, il faut que la page ILM soit explicitement partagee
 Le site est protege par mot de passe via les variables Vercel :
 
 - `ILM_PASSWORD` : acces Jordan / admin
+- `ILM_PASSWORD_SOPHIE` : acces Sophie
 - `ILM_PASSWORD_LOUIS` : acces Louis
 - `ILM_PASSWORD_VANESSA` : acces Vanessa
 - `ILM_PASSWORD_JULIETTE` : acces Juliette
+- `ILM_PASSWORD_NED` : acces Ned
 - `ILM_PASSWORD_MARVIN` : acces Marvin
 - `ILM_PASSWORD_TEAM` : acces equipe
 

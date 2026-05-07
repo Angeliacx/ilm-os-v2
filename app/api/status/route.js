@@ -9,9 +9,11 @@ export async function GET() {
     generatedAt: new Date().toISOString(),
     auth: {
       Jordan: enabled(process.env.ILM_PASSWORD),
+      Sophie: enabled(process.env.ILM_PASSWORD_SOPHIE),
       Louis: enabled(process.env.ILM_PASSWORD_LOUIS),
       Vanessa: enabled(process.env.ILM_PASSWORD_VANESSA),
       Juliette: enabled(process.env.ILM_PASSWORD_JULIETTE),
+      Ned: enabled(process.env.ILM_PASSWORD_NED),
       Marvin: enabled(process.env.ILM_PASSWORD_MARVIN),
       Team: enabled(process.env.ILM_PASSWORD_TEAM)
     },
