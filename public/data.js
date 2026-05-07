@@ -48,6 +48,14 @@ const ILM_DATA = {
       next: "Verifier que les comptes IG sont en Business/Creator et relies a Meta Business."
     },
     {
+      name: "Instagram ILM marque",
+      owner: "Jordan",
+      status: "To do",
+      priority: "High",
+      purpose: "Creer une page Instagram ultra sobre pour l'image ILM: talent, mannequin, direction artistique, pas agence OF.",
+      next: "Choisir le @, ecrire une bio premium, preparer 9 premiers posts et highlights discrets avant publication."
+    },
+    {
       name: "TikTok",
       owner: "Team",
       status: "To configure",
@@ -466,6 +474,17 @@ const ILM_DATA = {
         actions: ["Verifier la place restante chez Ned.", "Decider quels comptes vont sur le nouveau telephone Jordan.", "Demarrer le warm-up proprement."]
       },
       {
+        id: "ops-instagram-ilm-premium",
+        group: "Daily Ops",
+        title: "Creer Instagram ILM premium",
+        priority: "High",
+        status: "To do",
+        owner: "Jordan + Codex",
+        deadline: "Avant lancement ilovemodels.fr",
+        summary: "Creer une page Instagram ILM ultra quali, tres sobre, orientee agence de talent/mannequin et non agence OF.",
+        actions: ["Choisir un @ propre et disponible.", "Ecrire une bio premium: talent management, image, direction artistique.", "Preparer 9 premiers posts tres sobres.", "Creer highlights: Talents, Direction, Casting, Contact.", "Eviter tout vocabulaire OF, contenu adulte, revenu facile ou promesse agressive."]
+      },
+      {
         id: "ops-louis-two-more-accounts",
         group: "Daily Ops",
         title: "Voir Louis pour 2 comptes en plus",
@@ -748,7 +767,7 @@ const ILM_DATA = {
       role: "CEO / Direction",
       access: "ILM_PASSWORD",
       objective: "Piloter priorites, domaine, Notion, comptabilite et arbitrages.",
-      tasks: ["Preparer RDV Sophie mardi", "Choisir domaine Olesia", "Finaliser declaration de revenu"]
+      tasks: ["Preparer RDV Sophie mardi", "Instagram ILM premium", "Choisir domaine Olesia"]
     },
     {
       name: "Sophie",
@@ -947,6 +966,7 @@ const ILM_DATA = {
   processes: [
     ["Warm-up TikTok", "7 jours, 10-25 min/jour. Camera TikTok sur les 5 premiers posts."],
     ["Warm-up Instagram", "J1 creation 4G, J2-3 confiance, J4 stories, J5 post+lien, S2 montee, S3-4 croissance."],
+    ["Instagram ILM marque", "Page ultra sobre: noir, blanc, beige editorial, book mannequin, coulisses propres, casting, direction artistique. Aucun vocabulaire OF/adulte."],
     ["Model Script Brief", "6 phases: intro, clothed tease, undressing, soft, masturbation, climax. 2-3 par semaine."],
     ["Regles IG", "0 hashtag interdit, 5-10 par post, max 20 follows/jour, max 30 likes/session, meme appareil et IP 2 semaines."],
     ["Formats", "Photo 1080x1350, story/reel 1080x1920, JPEG 85-95%, H.264 30fps+."]
@@ -1009,6 +1029,13 @@ const ILM_DATA = {
         owner: "Codex",
         goal: "Preparer ilovemodels.fr comme site propre pour nouvelles modeles.",
         steps: ["Creer une premiere version publique.", "Ajouter branding ILM.", "Prevoir candidature et lien vers l'OS prive."]
+      },
+      {
+        title: "Instagram ILM premium",
+        status: "To do",
+        owner: "Jordan + Codex",
+        goal: "Creer une page Instagram ILM qui ressemble a une agence de talent/mannequin sobre, pas a une agence OF.",
+        steps: ["Choisir le @.", "Valider bio et ton editorial.", "Preparer 9 premiers posts.", "Ajouter highlights Talents, Direction, Casting, Contact.", "Brancher ensuite les KPI Instagram."]
       },
       {
         title: "OS prive sur sous-domaine",
