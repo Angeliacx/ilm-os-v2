@@ -94,6 +94,8 @@ Actuellement en production :
 - architecture validee : `ilovemodels.fr` = vitrine publique, `os.ilovemodels.fr` = dashboard prive ILM OS
 - priorite branding ajoutee : creer une page Instagram ILM ultra sobre, orientee talent/mannequin, sans vocabulaire OF/adulte
 - DNS OVH et Vercel valides : `ilovemodels.fr`, `www.ilovemodels.fr` et `os.ilovemodels.fr` sont verifies et live
+- cockpit Jordan ajoute au dashboard : raccourcis personnels dont `http://localhost:3000/`, OS live, vitrine ILM et deeplink Vanessa
+- modes operationnels ajoutes : Survie, Standard, CEO, Recovery. Chaque mode affiche des missions et rappels adaptes au niveau d'energie du moment
 
 ## Recette
 

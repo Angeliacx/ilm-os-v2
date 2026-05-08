@@ -104,6 +104,120 @@ const ILM_DATA = {
       next: "Madame Vanessa est live sur madamevanessaoff.com. Prochaine etape: choisir le domaine Olesia et preparer le Vercel Olesia."
     }
   ],
+  quickLinks: [
+    {
+      label: "Local",
+      title: "localhost:3000",
+      url: "http://localhost:3000/",
+      note: "Atelier sur ton ordinateur. Pratique quand tu testes une version avant publication."
+    },
+    {
+      label: "OS live",
+      title: "os.ilovemodels.fr",
+      url: "https://os.ilovemodels.fr/dashboard",
+      note: "Dashboard prive equipe, protege par mot de passe."
+    },
+    {
+      label: "Vitrine",
+      title: "ilovemodels.fr",
+      url: "https://ilovemodels.fr",
+      note: "Site public propre pour la marque ILM."
+    },
+    {
+      label: "Vanessa",
+      title: "madamevanessaoff.com",
+      url: "https://madamevanessaoff.com",
+      note: "Deeplink propre Vanessa vers MYM et Telegram."
+    }
+  ],
+  operationalModes: [
+    {
+      id: "survie",
+      name: "Survie",
+      headline: "Minimum viable day",
+      trigger: "Soiree, after, fatigue, mental bas.",
+      energy: "Energie basse",
+      complexity: "Complexite tres basse",
+      maxTasks: "1 a 3 actions",
+      goal: "Garder ILM vivant sans lancer de gros chantier.",
+      tasks: [
+        "Verifier seulement les urgences rouges du dashboard.",
+        "Ajouter une note rapide si une idee importante arrive.",
+        "Faire une micro-action simple: envoyer un message, cocher une tache, ranger un lien.",
+        "Reporter DNS, API, finance et grosses decisions au lendemain."
+      ],
+      reminders: [
+        "Boire de l'eau.",
+        "Ne pas changer l'infrastructure tard le soir.",
+        "Une note suffit si tu n'as plus d'energie.",
+        "Dormir vaut mieux qu'un chantier casse."
+      ]
+    },
+    {
+      id: "standard",
+      name: "Standard",
+      headline: "Journee normale",
+      trigger: "Energie correcte, execution simple.",
+      energy: "Energie moyenne",
+      complexity: "Complexite moyenne",
+      maxTasks: "3 a 6 actions",
+      goal: "Faire avancer les priorites sans surcharge.",
+      tasks: [
+        "Choisir 3 priorites: une Vanessa, une Juliette/Olesia, une admin.",
+        "Mettre a jour les statuts des taches ouvertes.",
+        "Faire un bloc contenu ou comptes Instagram.",
+        "Verifier domaines, liens et prochaines actions avant de fermer."
+      ],
+      reminders: [
+        "Une priorite finie vaut mieux que cinq ouvertes.",
+        "Mettre a jour le dashboard apres chaque avancee.",
+        "Garder les comptes et telephones separes proprement."
+      ]
+    },
+    {
+      id: "ceo",
+      name: "CEO",
+      headline: "Flux complet",
+      trigger: "Bonne phase, vision claire, capacite haute.",
+      energy: "Energie haute",
+      complexity: "Complexite haute",
+      maxTasks: "6 a 12 actions",
+      goal: "Structurer l'agence, publier, brancher, deleguer.",
+      tasks: [
+        "Faire avancer KPI, API, tracking links et architecture OS.",
+        "Decider les domaines, comptes, roles et objectifs par personne.",
+        "Publier une version propre sur Vercel apres verification.",
+        "Transformer les notes brutes en missions claires pour l'equipe.",
+        "Preparer le prochain handoff Claude/Codex quand le sujet est mature."
+      ],
+      reminders: [
+        "Tu es en mode construction: garder une trace de chaque decision.",
+        "Deleguer ce qui peut etre execute par Sophie, Marvin, Louis ou Ned.",
+        "Avant publication: tester, puis seulement deployer."
+      ]
+    },
+    {
+      id: "recovery",
+      name: "Recovery",
+      headline: "Lendemain propre",
+      trigger: "Retour au calme, triage, remise en ordre.",
+      energy: "Energie fragile",
+      complexity: "Basse a moyenne",
+      maxTasks: "2 a 4 actions",
+      goal: "Revenir au propre sans pression inutile.",
+      tasks: [
+        "Relire les notes rapides Jordan et supprimer le bruit.",
+        "Reclasser les taches en High, Medium, Low.",
+        "Faire une action administrative simple.",
+        "Preparer le mode CEO suivant avec une seule grosse priorite."
+      ],
+      reminders: [
+        "Pas besoin de tout rattraper d'un coup.",
+        "Commencer par clarifier, puis agir.",
+        "La meilleure relance est une prochaine action simple."
+      ]
+    }
+  ],
   kpiBlueprints: [
     {
       model: "Vanessa",

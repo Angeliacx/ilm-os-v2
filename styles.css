@@ -457,6 +457,155 @@ h4 {
   margin-bottom: 18px;
 }
 
+.quick-links-panel,
+.operational-modes-panel {
+  margin-bottom: 18px;
+}
+
+.quick-link-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.quick-link-card {
+  display: grid;
+  gap: 7px;
+  min-height: 118px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-strong);
+  color: var(--ink);
+}
+
+.quick-link-card:hover {
+  border-color: rgba(216, 197, 168, 0.42);
+  background: rgba(216, 197, 168, 0.08);
+}
+
+.quick-link-card span {
+  width: fit-content;
+  min-height: 24px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.quick-link-card strong {
+  font-size: 16px;
+}
+
+.quick-link-card small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.mode-card {
+  display: grid;
+  gap: 7px;
+  min-height: 132px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-strong);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.mode-card:hover,
+.mode-card.active {
+  border-color: rgba(216, 197, 168, 0.5);
+  background: linear-gradient(135deg, rgba(216, 197, 168, 0.13), var(--panel-strong));
+}
+
+.mode-card span {
+  color: var(--yellow);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.mode-card strong {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.mode-card small {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.mode-detail {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-strong);
+}
+
+.mode-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mode-summary h4 {
+  margin-top: 4px;
+  font-size: 18px;
+}
+
+.mode-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.mode-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: 16px;
+  padding: 14px;
+}
+
+.mode-detail h5 {
+  margin-bottom: 10px;
+  color: var(--yellow);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.mode-task-list,
+.reminder-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: #d8d5e6;
+  line-height: 1.45;
+}
+
+.reminder-list {
+  color: var(--muted);
+}
+
 .quick-note-form {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 140px auto;
@@ -1426,7 +1575,9 @@ code {
 
   .stats-grid,
   .process-grid,
-  .notion-grid {
+  .notion-grid,
+  .quick-link-grid,
+  .mode-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1438,6 +1589,7 @@ code {
   .ops-support-grid,
   .workspace-grid,
   .kpi-model-grid,
+  .mode-detail-grid,
   .recipe-grid {
     grid-template-columns: 1fr;
   }
@@ -1488,6 +1640,8 @@ code {
   .stats-grid,
   .notion-grid,
   .process-grid,
+  .quick-link-grid,
+  .mode-grid,
   .meta,
   .split-list,
   .revenue-list,
@@ -1510,6 +1664,7 @@ code {
   .domain-row,
   .runtime-row,
   .access-row,
+  .mode-summary,
   .quick-note-form,
   .ceo-note {
     grid-template-columns: 1fr;
@@ -1517,7 +1672,8 @@ code {
 
   .todo-badges,
   .domain-badges,
-  .connection-badges {
+  .connection-badges,
+  .mode-badges {
     justify-content: flex-start;
   }
 

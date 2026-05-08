@@ -7,6 +7,7 @@ const STORAGE_KEY = "ilm-os-state-v1";
 const storedState = loadState();
 const taskStatuses = storedState.taskStatuses || {};
 const kpiValues = storedState.kpiValues || {};
+let currentMode = storedState.currentMode || "ceo";
 let ceoNotes = storedState.ceoNotes || [];
 let runtimeStatus = null;
 
@@ -33,6 +34,7 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({
     taskStatuses,
     kpiValues,
+    currentMode,
     ceoNotes,
     savedAt: new Date().toISOString()
   }));
@@ -152,6 +154,73 @@ function renderCeoNotes() {
   `).join("") : `<p class="empty">Aucune note. Tu peux remplacer Google Keep ici pour les pense-betes rapides.</p>`;
 }
 
+function renderQuickLinks() {
+  const isJordan = currentRole() === "Jordan";
+  $("#quickLinksPanel").classList.toggle("hidden", !isJordan);
+  if (!isJordan) return;
+
+  $("#quickLinkGrid").innerHTML = ILM_DATA.quickLinks.map((link) => `
+    <a class="quick-link-card" href="${link.url}" target="_blank" rel="noreferrer" data-track="Quick link ${link.label}">
+      <span>${link.label}</span>
+      <strong>${link.title}</strong>
+      <small>${link.note}</small>
+    </a>
+  `).join("");
+}
+
+function modeTone(modeId) {
+  return {
+    survie: "danger",
+    standard: "warning",
+    ceo: "success",
+    recovery: ""
+  }[modeId] || "";
+}
+
+function renderOperationalModes() {
+  const isJordan = currentRole() === "Jordan";
+  $("#operationalModesPanel").classList.toggle("hidden", !isJordan);
+  if (!isJordan) return;
+
+  const modes = ILM_DATA.operationalModes || [];
+  const selected = modes.find((mode) => mode.id === currentMode) || modes[0];
+  if (!selected) return;
+  currentMode = selected.id;
+  $("#modeStatus").textContent = selected.name;
+  $("#modeStatus").className = `pill ${modeTone(selected.id)}`;
+
+  $("#modeGrid").innerHTML = modes.map((mode) => `
+    <button class="mode-card ${mode.id === selected.id ? "active" : ""}" type="button" data-mode="${mode.id}">
+      <span>${mode.name}</span>
+      <strong>${mode.headline}</strong>
+      <small>${mode.trigger}</small>
+    </button>
+  `).join("");
+
+  $("#modeDetail").innerHTML = `
+    <div class="mode-summary">
+      <div>
+        <span class="eyebrow">${selected.energy}</span>
+        <h4>${selected.goal}</h4>
+      </div>
+      <div class="mode-badges">
+        ${badge(selected.complexity)}
+        ${badge(selected.maxTasks)}
+      </div>
+    </div>
+    <div class="mode-detail-grid">
+      <div>
+        <h5>Missions du mode</h5>
+        <ul class="mode-task-list">${selected.tasks.map((task) => `<li>${task}</li>`).join("")}</ul>
+      </div>
+      <div>
+        <h5>Rappels simples</h5>
+        <ul class="reminder-list">${selected.reminders.map((reminder) => `<li>${reminder}</li>`).join("")}</ul>
+      </div>
+    </div>
+  `;
+}
+
 function renderDashboard() {
   const critical = ILM_DATA.deadlines.filter((deadline) => !deadline[3]).slice(0, 7);
   const vanessaTasks = ILM_DATA.operationalTasks.filter((task) => task.group === "Vanessa / Sophie Banks");
@@ -159,6 +228,8 @@ function renderDashboard() {
   $("#criticalCount").textContent = `${critical.length} a traiter`;
   $("#vanessaTodoCount").textContent = `${openVanessaTasks} ouvertes`;
   renderCeoNotes();
+  renderQuickLinks();
+  renderOperationalModes();
   renderConnections();
   renderKpiModels();
   renderTaskCards(vanessaTasks, "#vanessaTaskList");
@@ -601,8 +672,15 @@ document.addEventListener("change", (event) => {
 });
 
 document.addEventListener("click", (event) => {
+  const modeButton = event.target.closest("[data-mode]");
   const toggleId = event.target.dataset.noteToggle;
   const deleteId = event.target.dataset.noteDelete;
+
+  if (modeButton) {
+    currentMode = modeButton.dataset.mode;
+    saveState();
+    renderOperationalModes();
+  }
 
   if (toggleId) {
     ceoNotes = ceoNotes.map((note) => note.id === toggleId ? { ...note, done: !note.done } : note);
@@ -654,11 +732,13 @@ $("#exportSnapshot").addEventListener("click", () => {
     exportedAt: new Date().toISOString(),
     taskStatuses,
     kpiValues,
+    currentMode,
     ceoNotes,
     models: ILM_DATA.models.map(({ name, status, progress, manager, niche }) => ({ name, status, progress, manager, niche })),
     connections: ILM_DATA.connections,
     kpiBlueprints: ILM_DATA.kpiBlueprints,
     dailyOps: ILM_DATA.dailyOps,
+    operationalModes: ILM_DATA.operationalModes,
     architecture: ILM_DATA.architecture
   };
   const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type: "application/json" });
