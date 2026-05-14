@@ -24,6 +24,7 @@ URLs :
 - OS prive : `https://os.ilovemodels.fr/dashboard`
 - Ancien alias Vercel : `https://ilm-flax.vercel.app/dashboard`
 - Local Jordan : `http://localhost:3000/`
+- Dashboard ILM local : `http://localhost:3000/dashboard`
 - Vitrine publique cible : `https://ilovemodels.fr`
 - Mini-site Vanessa : `https://madamevanessaoff.com`
 
@@ -33,6 +34,8 @@ Mot de passe local Jordan :
 
 Le login local a ete stabilise dans `app/api/auth/route.js`.
 Le lanceur local est `scripts/start-ilm-local.ps1`.
+La racine locale `/` est reservee au cockpit personnel Jordan.
+Le dashboard agence doit rester sur `/dashboard`.
 
 ## Roles
 
@@ -44,6 +47,7 @@ Responsable de :
 - routes Next/Vercel
 - auth, middleware, mots de passe
 - dashboard operationnel
+- separation cockpit personnel `/` et dashboard agence `/dashboard`
 - donnees dans `data.js`
 - synchronisation `public/`
 - tests `npm run lint` et `npm run build`

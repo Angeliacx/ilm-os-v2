@@ -99,6 +99,7 @@ Actuellement en production :
 - priorite branding ajoutee : creer une page Instagram ILM ultra sobre, orientee talent/mannequin, sans vocabulaire OF/adulte
 - DNS OVH et Vercel valides : `ilovemodels.fr`, `www.ilovemodels.fr` et `os.ilovemodels.fr` sont verifies et live
 - cockpit Jordan ajoute au dashboard : raccourcis personnels dont `http://localhost:3000/`, OS live, vitrine ILM et deeplink Vanessa
+- separation locale ajoutee : `http://localhost:3000/` est maintenant le cockpit personnel Jordan, tandis que `http://localhost:3000/dashboard` reste le dashboard prive ILM
 - modes operationnels ajoutes : Survie, Standard, CEO, Recovery. Chaque mode affiche des missions et rappels adaptes au niveau d'energie du moment
 - localhost automatise : `scripts/start-ilm-local.cmd` appelle `scripts/start-ilm-local.ps1`, lance Next sur `http://localhost:3000/`, nettoie le cache `.next` avant demarrage, et un raccourci Windows "ILM Local Dashboard 3000" est installe dans le dossier Demarrage de Jordan
 - route dashboard corrigee : `/dashboard` sert directement `public/dashboard.html` via `app/dashboard/route.js`, afin d'eviter la boucle Vercel `/dashboard` <-> `/dashboard.html`
