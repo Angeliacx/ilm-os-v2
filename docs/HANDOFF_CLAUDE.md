@@ -47,6 +47,10 @@ Guide challenge Claude :
 
 `docs/PROMPT_CLAUDE_CHALLENGE.md`
 
+Guide collaboration Codex / Claude :
+
+`docs/HANDOFF_CLAUDE_COLLAB.md`
+
 Guide DNS OVH :
 
 `docs/OVH_DNS_ILM.md`
