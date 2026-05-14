@@ -14,13 +14,6 @@ if ($existingPort) {
 }
 
 $nextDir = Join-Path $projectRoot ".next"
-if (Test-Path -LiteralPath $nextDir) {
-  $resolvedRoot = (Resolve-Path -LiteralPath $projectRoot).Path
-  $resolvedNext = (Resolve-Path -LiteralPath $nextDir).Path
-  if ($resolvedNext.StartsWith($resolvedRoot, [StringComparison]::OrdinalIgnoreCase)) {
-    Remove-Item -LiteralPath $resolvedNext -Recurse -Force
-  }
-}
 
 $env:PORT = "3000"
 $env:HOSTNAME = "127.0.0.1"
@@ -28,4 +21,12 @@ $env:ILM_PASSWORD = "ilm2026"
 
 "[$(Get-Date -Format o)] Starting ILM local dashboard on http://localhost:3000/" | Out-File -FilePath $logFile -Encoding utf8 -Append
 
-& npm.cmd run dev -- -H 127.0.0.1 -p 3000 *>> $logFile
+if (-not (Test-Path -LiteralPath $nextDir)) {
+  & npm.cmd run build *>> $logFile
+  if ($LASTEXITCODE -ne 0) {
+    "[$(Get-Date -Format o)] Build failed. Local dashboard not started." | Out-File -FilePath $logFile -Encoding utf8 -Append
+    exit $LASTEXITCODE
+  }
+}
+
+& npx.cmd next start -H 127.0.0.1 -p 3000 *>> $logFile
